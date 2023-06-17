@@ -7,8 +7,10 @@ void Estoque::adicionarProduto() {
 
 	string nome, tamanho, cor, marca;
 	float preco;
-	int quantidade;
+	int quantidade, id;
 
+	cout << "\nID do produto: ";
+	cin >> id;
 	cout << "\nNome do produto: ";
 	cin >> nome;
 	cout << "\nPreco do produto: R$";
@@ -22,7 +24,7 @@ void Estoque::adicionarProduto() {
 	cout << "\nQuantidade do produto: ";
 	cin >> quantidade;
 
-	Produto produto(nome, preco, tamanho, cor, marca, quantidade);
+	Produto produto(id, nome, preco, tamanho, cor, marca, quantidade);
 	produtos.push_back(produto);
 
 	cout << "\nProduto adicionado ao estoque!\n";

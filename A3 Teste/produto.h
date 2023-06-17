@@ -9,6 +9,7 @@ class Produto {
 
 	private:
 
+	int id;
 	string nome;
 	float preco;
 	string tamanho;
@@ -18,8 +19,9 @@ class Produto {
 
 	public:
 
-	Produto(const string& _nome, float _preco, const string& _tamanho, const string& _cor, const string& _marca, int quantidade);
+	Produto(int id,const string& _nome, float _preco, const string& _tamanho, const string& _cor, const string& _marca, int quantidade);
 
+	int getId() const;
 	string getNome() const;
 	float getPreco() const;
 	string getTamanho() const;
