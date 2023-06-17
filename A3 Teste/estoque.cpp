@@ -1,5 +1,6 @@
 #include "Estoque.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -11,16 +12,24 @@ void Estoque::adicionarProduto() {
 
 	cout << "\nID do produto: ";
 	cin >> id;
+
+	cin.ignore();
+
 	cout << "\nNome do produto: ";
-	cin >> nome;
+	getline(cin, nome);
+
 	cout << "\nPreco do produto: R$";
 	cin >> preco;
+
 	cout << "\nTamanho do produto: ";
 	cin >> tamanho;
+
 	cout << "\nCor do produto: ";
 	cin >> cor;
+
 	cout << "\nMarca do produto: ";
 	cin >> marca;
+
 	cout << "\nQuantidade do produto: ";
 	cin >> quantidade;
 
