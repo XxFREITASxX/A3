@@ -104,7 +104,16 @@ int main() {
 
 			case 1:
 
-				estoque.adicionarProduto();
+				do {
+					estoque.adicionarProduto();
+
+					cout << "Dejesa adicionar outro protudo ao estoque? (S/N): ";
+					char resposta;
+					cin >> resposta;
+					if (resposta != 'S' && resposta != 's') {
+						break;
+					}
+				} while (true);
 
 				break;
 
