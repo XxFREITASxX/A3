@@ -10,6 +10,7 @@ int main() {
 
 	string login, senha;
 	int opcao;
+	int opcao2;
 	int selecao;
 	bool sair = false;
 
@@ -85,6 +86,25 @@ int main() {
 				cout << "\nLogin inválido!\n";
 			}
 
+			cout << "\t\t ===============================================\n";
+			cout << "\t\t ||                                           ||\n";
+			cout << "\t\t ||             MENU ADMINISTRADOR            ||\n";
+			cout << "\t\t ||                                           ||\n";
+			cout << "\t\t ===============================================\n\n";
+			cout << endl;
+			cout << "| (1) Adicionar produto ao estoque |\n";
+			cout << "| (2) Remover produto do estoque   |\n";
+			cout << "| (3) Eixibir produtos do estoque  |\n";
+			cout << "| (4) SAIR                         |\n";
+			cin >> opcao2;
+
+			switch (opcao2) {
+
+			case 1:
+				sistema.adicionarProduto();
+
+
+			}
 			break;
 
 		case 4:

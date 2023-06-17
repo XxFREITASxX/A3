@@ -14,7 +14,7 @@ void Sistema::cadastrarCliente() {
         cin >> nome;
 
         if (nome.size() < 3) {
-            cout << "Insira um nome válido com mais de 3 letras!\n";
+            cout << "\nInsira um nome valido com mais de 3 letras!\n";
         }
     } while (nome.size() < 3);
 
@@ -23,7 +23,7 @@ void Sistema::cadastrarCliente() {
 
     for (const auto& cliente : clientes) {
         if (cliente.getEmail() == email) {     // Checa se o email já está em uso.                                    
-            cout << "Email já registrado! Por favor, escolha um email diferente.\n";
+            cout << "\nEmail ja registrado! Por favor, escolha um email diferente.\n";
             return;
         }
     }
@@ -33,12 +33,12 @@ void Sistema::cadastrarCliente() {
         cin >> cpf;
 
         if (cpf.size() != 11)
-            cout << "Insira um cpf válido com 11 números!\n";
+            cout << "\nInsira um cpf valido com 11 números!\n";
     } while (cpf.size() != 11);
 
     for (const auto& cliente : clientes) {
         if (cliente.getCpf() == cpf) {     // Checa se o email já está em uso.                                    
-            cout << "CPF já registrado! Por favor, digite um CPF não cadastrado.\n";
+            cout << "CPF ja registrado! Por favor, digite um CPF nao cadastrado.\n";
             return;
         }
     }
@@ -48,7 +48,7 @@ void Sistema::cadastrarCliente() {
 
     for (const auto& cliente : clientes) {
         if (cliente.getLogin() == login) {     // Checa se o login já está em uso.
-            cout << "Este login já está em uso. Por favor, escolha um login diferente.\n";
+            cout << "Login ja existente. Por favor, escolha um login diferente.\n";
             return;
         }
     }
@@ -62,8 +62,8 @@ void Sistema::cadastrarCliente() {
     getline(cin, endereco);
     
 
-    Cliente cliente(nome, email, cpf, login, senha, endereco);
-    clientes.push_back(cliente);
+    Cliente cliente(nome, email, cpf, login, senha, endereco); // Cria um objeto e passa os parâmetros para ele.
+    clientes.push_back(cliente); // Adiciona o objeto criado no final do vetor de clientes.
 
     cout << "\nCadastro realizado com sucesso!\n";
 }
@@ -75,13 +75,13 @@ void Sistema::cadastrarFuncionario() {
     string nome, email, cpf, login, senha;
     int id_funcionario;
 
-    do {
+    do {   // Loop para pedir um nome valido com mais de 3 letras.
 
         cout << "\nNome: ";
         cin >> nome;
 
         if (nome.size() < 3) {
-            cout << "Insira um nome válido com mais de 3 letras!";
+            cout << "Insira um nome valido com mais de 3 letras!";
         }
     } while (nome.size() < 3);
 
@@ -91,25 +91,32 @@ void Sistema::cadastrarFuncionario() {
 
     for (const auto& funcionario : funcionarios) {
         if (funcionario.getEmail() == email) {     // Checa se o email já está em uso.                                    
-            cout << "Email já registrado! Por favor, escolha um email diferente.\n";
+            cout << "Email ja registrado! Por favor, escolha um email diferente.\n";
             return; 
         }
     }
 
-    do {
+    do { // Loop para pedir um CPF válido de 11 números.
         cout << "\nCPF: ";
         cin >> cpf;
 
         if (cpf.size() != 11)
-            cout << "Insira um cpf válido com 11 números!\n";
+            cout << "Insira um cpf valido com 11 números!\n";
     } while (cpf.size() != 11);
+
+    for (const auto& funcionario : funcionarios) {
+        if (funcionario.getCpf() == cpf) {     // Checa se o email já está em uso.                                    
+            cout << "CPF ja registrado! Por favor, digite um CPF nao cadastrado.\n";
+            return;
+        }
+    }
 
     cout << "\nLogin: ";
     cin >> login;
 
     for (const auto& funcionario : funcionarios) {
         if (funcionario.getLogin() == login) {     // Checa se o login já está em uso.
-            cout << "Este login já está em uso. Por favor, escolha um login diferente.\n";
+            cout << "Login ja existente. Por favor, escolha um login diferente.\n";
             return;
         }
     }
@@ -120,8 +127,8 @@ void Sistema::cadastrarFuncionario() {
     cout << "\nID: ";
     cin >> id_funcionario;
 
-    Funcionario funcionario(nome, email, cpf, login, senha, id_funcionario);
-    funcionarios.push_back(funcionario);
+    Funcionario funcionario(nome, email, cpf, login, senha, id_funcionario); // Cria um objeto e passa os parâmetros para ele.
+    funcionarios.push_back(funcionario); // Adiciona o objeto criado no final do vetor de funcionarios.
 
     cout << "\nCadastro realizado com sucesso!\n";
 }

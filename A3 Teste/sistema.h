@@ -20,8 +20,6 @@ public:
     Sistema();
     void cadastrarCliente();
     void cadastrarFuncionario();
-    void logarCliente();
-    void logarFuncionario();
     bool autenticarCliente(const string& login, const string& senha);
     bool autenticarFuncionario(const string& login, const string& senha);
 };
