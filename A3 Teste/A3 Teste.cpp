@@ -88,66 +88,72 @@ int main() {
 				cout << "\nLogin inválido!\n";
 			}
 
-			cout << "\t\t ===============================================\n";
-			cout << "\t\t ||                                           ||\n";
-			cout << "\t\t ||             MENU ADMINISTRADOR            ||\n";
-			cout << "\t\t ||                                           ||\n";
-			cout << "\t\t ===============================================\n\n";
-			cout << endl;
-			cout << "| (1) Adicionar produto ao estoque |\n";
-			cout << "| (2) Remover produto do estoque   |\n";
-			cout << "| (3) Eixibir produtos do estoque  |\n";
-			cout << "| (4) SAIR                         |\n";
-			cin >> opcao2;
+			do {
+				cout << "\t\t ===============================================\n";
+				cout << "\t\t ||                                           ||\n";
+				cout << "\t\t ||             MENU ADMINISTRADOR            ||\n";
+				cout << "\t\t ||                                           ||\n";
+				cout << "\t\t ===============================================\n\n";
+				cout << endl;
+				cout << "| (1) Adicionar produto ao estoque |\n";
+				cout << "| (2) Remover produto do estoque   |\n";
+				cout << "| (3) Eixibir produtos do estoque  |\n";
+				cout << "| (4) SAIR                         |\n";
+				cin >> opcao2;
 
-			switch (opcao2) {
+				switch (opcao2) {
 
-			case 1:
+				case 1:
 
-				do {
-					estoque.adicionarProduto();
+					do {
+						estoque.adicionarProduto();
 
-					cout << "Dejesa adicionar outro protudo ao estoque? (S/N): ";
-					char resposta;
-					cin >> resposta;
-					if (resposta != 'S' && resposta != 's') {
-						break;
-					}
-				} while (true);
+						cout << "Dejesa adicionar outro produto ao estoque? (S/N): ";
+						char resposta;
+						cin >> resposta;
+						if (resposta != 'S' && resposta != 's') {
+							opcao2 = 0;
+							break;
+						}
+					} while (true);
 
-				break;
+					break;
 
-			case 2:
+				case 2:
 
-				int id;
+					int id;
 
-				cout << "Digite o ID do produto a ser removido: ";
-				cin >> id;
+					cout << "Digite o ID do produto a ser removido: ";
+					cin >> id;
 
-				estoque.removerProduto(id);
-				cout << "Produto removido do estoque!" << endl;
+					estoque.removerProduto(id);
+					cout << "Produto removido do estoque!" << endl;
 
-				break;
+					break;
 
-			case 3:
+				case 3:
 
-				estoque.exibirProdutos();
+					estoque.exibirProdutos();
 
-				break;
+					break;
 
-			case 4:
+				case 4:
 
-				sair = true;
+					sair = true;
 
-				break;
+					break;
 
-			default:
+				default:
 
-				cout << "Escolha uma opcao valida." << endl;
+					cout << "Escolha uma opcao valida." << endl;
 
-				break;
+					break;
 
-			}
+				}
+			} while (!sair);
+
+			sair = false;
+
 			break;
 
 		case 4:
