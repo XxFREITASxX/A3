@@ -105,13 +105,38 @@ int main() {
 			case 1:
 
 				estoque.adicionarProduto();
+
 				break;
 
 			case 2:
 
-				estoque.removerProduto(indice);
+				int id;
 
+				cout << "Digite o ID do produto a ser removido: ";
+				cin >> id;
 
+				estoque.removerProduto(id);
+				cout << "Produto removido do estoque!" << endl;
+
+				break;
+
+			case 3:
+
+				estoque.exibirProdutos();
+
+				break;
+
+			case 4:
+
+				sair = true;
+
+				break;
+
+			default:
+
+				cout << "Escolha uma opcao valida." << endl;
+
+				break;
 
 			}
 			break;
