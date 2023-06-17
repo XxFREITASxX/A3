@@ -8,12 +8,12 @@ void Estoque::adicionarProduto(const Produto& produto) {
 }
 
 void Estoque::removerProduto(int indice) {
-	if (indice >= 0 && indice < produto.size()) {
-		produto.erase(produtos.begin() + indice);
+	if (indice >= 0 && indice < produtos.size()) {
+		produtos.erase(produtos.begin() + indice);
 	}
 }
 
-void Estoque::exibitProdutos() const {
+void Estoque::exibirProdutos() const {
 	if (produtos.empty()) {
 		cout << "Nenhum produto em estoque!" << endl;
 	}else {
@@ -21,6 +21,9 @@ void Estoque::exibitProdutos() const {
 		for (const auto& produto : produtos)
 			cout << "\nNome: " << produto.getNome() << endl;
 		    cout << "\nPreço: " << produto.getPreco() << endl;
+			cout << "\nTamanho: " << produto.getTamanho() << endl;
+			cout << "\nCor: " << produto.getCor() << endl;
+			cout << "\nMarca: " << produto.getMarca() << endl;
 			cout << "\nQuantidade: " << produto.getQuantidade() << endl;
 	}
 }

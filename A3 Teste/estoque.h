@@ -15,9 +15,7 @@ class Estoque {
 
 		void adicionarProduto(const Produto& produto);
 		void removerProduto(int indice);
-		void exibitProdutos() const;
-
-
+		void exibirProdutos() const;
 
 };
 #endif

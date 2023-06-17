@@ -1,12 +1,14 @@
 #include <iostream>
 #include <vector>
 #include "sistema.h"
+#include "estoque.h"
 
 using namespace std;
 
 int main() {
 
 	Sistema sistema;
+	Estoque estoque;
 
 	string login, senha;
 	int opcao;
@@ -101,7 +103,14 @@ int main() {
 			switch (opcao2) {
 
 			case 1:
-				sistema.adicionarProduto();
+
+				estoque.adicionarProduto();
+				break;
+
+			case 2:
+
+				estoque.removerProduto(indice);
+
 
 
 			}
