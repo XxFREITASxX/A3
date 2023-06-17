@@ -18,6 +18,8 @@ private:
 public:
 
     Sistema();
+
+    // Cadastro e Login
     void cadastrarCliente();
     void cadastrarFuncionario();
     bool autenticarCliente(const string& login, const string& senha);
