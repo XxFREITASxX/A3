@@ -12,10 +12,14 @@ Estoque::Estoque() {
 	Produto produto4(4, "Camiseta Regata", 79.99, "| M | G | GG |", "Preto, Branco", "Nike", 17, "Camiseta");
 	Produto produto5(5, "Calca Cargo", 209.99, "| P | M | G |", "Preto, Bege", "Nike", 10, "Calca");
 	Produto produto6(6, "Calca Moletom", 189.99, "| P | M | G | GG |", "Preto, Cinza", "Nike", 12, "Calca");
-	Produto produto7(7, "Moletom Canguru", 259.99, "| P | M | G | GG |", "Preto, Cinza, Offwhite", "Nike", 25, "Moletom");
-	Produto produto8(8, "Moletom SportsWear", 229.99, "| M | G | GG |", "Preto, Cinza", "Nike", 19, "Moletom");
-	Produto produto9(9, "Moletom TechFleece", 339.99, "| M|", "Preto", "Nike", 5, "Moletom");
-	Produto produto10(10, "Camiseta ...", 59.9, "|M|G|", "Preto", "Nike", 5, "Camiseta");
+	Produto produto7(7, "Calca TechFleece", 309.99, "| M |", "Preto, Branco", "Nike", 3, "Calca");
+	Produto produto8(8, "Moletom Canguru", 259.99, "| P | M | G | GG |", "Preto, Cinza, Offwhite", "Nike", 25, "Moletom");
+	Produto produto9(9, "Moletom SportsWear", 229.99, "| M | G | GG |", "Preto, Cinza", "Nike", 19, "Moletom");
+	Produto produto10(10, "Moletom TechFleece", 339.99, "| M |", "Preto, Branco", "Nike", 3, "Moletom");
+	Produto produto11(11, "Moletom Careca", 159.99, "| PP | P | M | G |", "Preto, Cinza, Offwhite", "Nike", 14, "Moletom");
+	Produto produto12(12, "Meia Cano alto (3 pares)", 59.99, "| P | M | G | GG |", "Preto, Cinza, Branco", "Nike", 30, "Meia");
+	Produto produto13(13, "Meia Cano Baixo (3 pares)", 59.99, "| P | M | G | GG |", "Preto, Cinza, Branco", "Nike", 25, "Meia");
+
 
 	produtos.push_back(produto1);
 	produtos.push_back(produto2);
@@ -27,7 +31,9 @@ Estoque::Estoque() {
 	produtos.push_back(produto8);
 	produtos.push_back(produto9);
 	produtos.push_back(produto10);
-
+	produtos.push_back(produto11);
+	produtos.push_back(produto12);
+	produtos.push_back(produto13);
 }
 
 void Estoque::adicionarProduto() {
