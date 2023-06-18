@@ -101,7 +101,7 @@ void Estoque::exibirProdutos() const {
 			
 			cout << "\nID: " << produto.getId() << endl;
 			cout << "Nome: " << produto.getNome() << endl;
-			cout << "Preco: " << produto.getPreco() << endl;
+			cout << "Preco: R$ " << produto.getPreco() << endl;
 			cout << "Tamanho: " << produto.getTamanho() << endl;
 			cout << "Cor: " << produto.getCor() << endl;
 			cout << "Marca: " << produto.getMarca() << endl;
