@@ -56,7 +56,7 @@ void Sistema::cadastrarCliente() {
 
             for (const auto& cliente : clientes) {
                 if (cliente.getCpf() == cpf) {
-                    cout << "CPF ja registrado! Por favor, digite um CPF nao cadastrado.\n";
+                    cout << "\nCPF ja registrado! Por favor, digite um CPF nao cadastrado.\n\n";
                     cpfExistente = true;
                     break;
                 }
@@ -78,7 +78,7 @@ void Sistema::cadastrarCliente() {
 
         for (const auto& cliente : clientes) {
             if (cliente.getLogin() == login) {
-                cout << "Login já existente. Por favor, escolha um login diferente.\n";
+                cout << "\nLogin já existente. Por favor, escolha um login diferente.\n\n";
                 loginExistente = true;
                 break;
             }
@@ -115,7 +115,9 @@ void Sistema::cadastrarFuncionario() {
     string nome, email, cpf, login, senha;
     int id_funcionario;
 
-    do {   // Loop para pedir um nome valido 3 ou mais letras.
+    // Nome
+
+    do {
 
         cout << "\nNome: ";
         cin >> nome;
@@ -125,44 +127,81 @@ void Sistema::cadastrarFuncionario() {
         }
     } while (nome.size() < 3);
 
+    // Email
 
-    cout << "Email: ";
-    cin >> email;
+    do {
+        cout << "Email: ";
+        cin >> email;
 
-    for (const auto& funcionario : funcionarios) { // Checa o vetor dos funcionários.
-        if (funcionario.getEmail() == email) {     // Checa se o email já está em uso.                                    
-            cout << "Email ja registrado! Por favor, escolha um email diferente.\n";
-            return; 
+        bool emailEmUso = false;
+
+        for (const auto& funcionario : funcionarios) {
+            if (funcionario.getEmail() == email) {
+                cout << "\nEmail ja registrado! Por favor, escolha um email diferente.\n\n";
+                emailEmUso = true;
+                break;
+            }
         }
-    }
 
-    do { // Loop para pedir um CPF válido de 11 números.
+        if (!emailEmUso) {
+            break;
+        }
+
+    } while (true);
+
+    // CPF
+
+    do {
         cout << "CPF: ";
         cin >> cpf;
 
-        if (cpf.size() != 11) // Permite que o CPF tenha apenas 11 digitos (xxx.xxx.xxx-xx).
-            cout << "Insira um cpf valido com 11 números!\n";
-    } while (cpf.size() != 11);
-
-    for (const auto& funcionario : funcionarios) { // Checa o vetor dos funcionários.
-        if (funcionario.getCpf() == cpf) {         // Checa se o email já está em uso.                                    
-            cout << "CPF ja registrado! Por favor, digite um CPF nao cadastrado.\n";
-            return;
+        if (cpf.size() != 11) {
+            cout << "\nInsira um CPF valido com 11 numeros!\n";
         }
-    }
+        else {
+            bool cpfExistente = false;
 
-    cout << "Login: ";
-    cin >> login;
+            for (const auto& funcionario : funcionarios) {
+                if (funcionario.getCpf() == cpf) {
+                    cout << "\nCPF ja registrado! Por favor, digite um CPF nao cadastrado.\n\n";
+                    cpfExistente = true;
+                    break;
+                }
+            }
 
-    for (const auto& funcionario : funcionarios) { // Checa o vetor dos funcionários.
-        if (funcionario.getLogin() == login) {     // Checa se o login já está em uso.
-            cout << "Login ja existente. Por favor, escolha um login diferente.\n";
-            return;
+            if (!cpfExistente) {
+                break;
+            }
         }
-    }
+    } while (true);
+
+    // Login
+
+    do {
+        cout << "Login: ";
+        cin >> login;
+
+        bool loginExistente = false;
+
+        for (const auto& funcionario : funcionarios) { // Checa o vetor dos funcinários.
+            if (funcionario.getLogin() == login) {     // Checa se o login ja esta em uso.
+                cout << "\nLogin já existente. Por favor, escolha um login diferente.\n\n";
+                loginExistente = true;
+                break;
+            }
+        }
+
+        if (!loginExistente) {
+            break;
+        }
+    } while (true);
+
+    // Senha
 
     cout << "Senha: ";
     cin >> senha;
+
+    // ID
 
     cout << "ID: ";
     cin >> id_funcionario;
