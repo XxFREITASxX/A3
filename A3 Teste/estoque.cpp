@@ -4,9 +4,25 @@
 
 using namespace std;
 
+Estoque::Estoque() {
+
+	Produto produto1(1, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
+	Produto produto2(2, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
+	Produto produto3(3, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
+	Produto produto4(4, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
+	Produto produto5(5, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
+
+	produtos.push_back(produto1);
+	produtos.push_back(produto2);
+	produtos.push_back(produto3);
+	produtos.push_back(produto4);
+	produtos.push_back(produto5);
+
+}
+
 void Estoque::adicionarProduto() {
 
-	string nome, tamanho, cor, marca;
+	string nome, tamanho, cor, marca, tipo;
 	float preco;
 	int quantidade, id;
 
@@ -40,8 +56,20 @@ void Estoque::adicionarProduto() {
 	cout << "Quantidade do produto: ";
 	cin >> quantidade;
 
-	Produto produto(id, nome, preco, tamanho, cor, marca, quantidade);  // Cria o objeto do tipo produto e passa os valores fornecidos como argumentos para o construtor 'Produto'
-	produtos.push_back(produto);									    // Adiciona o objeto 'produto' ao final do vetor de produtos
+	do {
+		cout << "Tipo do produto (Camiseta, Meia, Calca, Moletom): ";
+		cin >> tipo;
+
+		if (tipo == "Camiseta" || tipo == "camiseta" || tipo == "Meia" || tipo == "meia" || tipo == "Calca" || tipo == "calca" || tipo == "Moletom" || tipo == "moletom") {
+			break;
+		}
+		else {
+			cout << "Tipo inválido! Por favor, digite um tipo válido (Camiseta/camiseta | Meia/meia | Calca/calca | Moletom/moletom).";
+		}
+	} while (true);
+
+	Produto produto(id, nome, preco, tamanho, cor, marca, quantidade, tipo);  // Cria o objeto do tipo produto e passa os valores fornecidos como argumentos para o construtor 'Produto'
+	produtos.push_back(produto);									          // Adiciona o objeto 'produto' ao final do vetor de produtos
 
 	cout << "\nProduto adicionado ao estoque!\n";
 }
@@ -78,6 +106,7 @@ void Estoque::exibirProdutos() const {
 			cout << "Cor: " << produto.getCor() << endl;
 			cout << "Marca: " << produto.getMarca() << endl;
 			cout << "Quantidade: " << produto.getQuantidade() << endl;
+			cout << "Tipo: " << produto.getTipo() << endl;
 			cout << "=-=-=-=-=-=-=-=-=-=-=-=-=";
 		}
 	}

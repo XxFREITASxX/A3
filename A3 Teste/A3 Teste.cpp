@@ -46,7 +46,7 @@ int main() {
 			if (sistema.autenticarCliente(login, senha)) {
 				cout << "\nLogin realizado com sucesso!\n";
 			} else {
-				cout << "\nLogin inválido!\n";
+				cout << "\nLogin invalido! Nome de usuario ou senha incorretos.\n";
 			}
 			
 			break;

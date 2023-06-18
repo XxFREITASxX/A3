@@ -13,7 +13,7 @@ void Sistema::cadastrarCliente() {
         cout << "\nNome: ";
         cin >> nome;
 
-        if (nome.size() < 3) {
+        if (nome.size() < 3) { // Obriga o nome a ter 3 ou mais letras.
             cout << "\nInsira um nome valido com mais de 3 letras!\n";
         }
     } while (nome.size() < 3);
@@ -21,7 +21,7 @@ void Sistema::cadastrarCliente() {
     cout << "Email: ";
     cin >> email;
 
-    for (const auto& cliente : clientes) {
+    for (const auto& cliente : clientes) {     // Checa o vetor dos clientes.
         if (cliente.getEmail() == email) {     // Checa se o email já está em uso.                                    
             cout << "\nEmail ja registrado! Por favor, escolha um email diferente.\n";
             return;
@@ -32,11 +32,11 @@ void Sistema::cadastrarCliente() {
         cout << "CPF: ";
         cin >> cpf;
 
-        if (cpf.size() != 11)
+        if (cpf.size() != 11) // Permite que o CPF tenha apenas 11 digitos (xxx.xxx.xxx-xx).
             cout << "\nInsira um cpf valido com 11 números!\n";
     } while (cpf.size() != 11);
 
-    for (const auto& cliente : clientes) {
+    for (const auto& cliente : clientes) { // Checa o vetor dos clientes.
         if (cliente.getCpf() == cpf) {     // Checa se o email já está em uso.                                    
             cout << "CPF ja registrado! Por favor, digite um CPF nao cadastrado.\n";
             return;
@@ -46,7 +46,7 @@ void Sistema::cadastrarCliente() {
     cout << "\nLogin: ";
     cin >> login;
 
-    for (const auto& cliente : clientes) {
+    for (const auto& cliente : clientes) {     // Checa o vetor dos clientes.
         if (cliente.getLogin() == login) {     // Checa se o login já está em uso.
             cout << "Login ja existente. Por favor, escolha um login diferente.\n";
             return;
@@ -56,14 +56,14 @@ void Sistema::cadastrarCliente() {
     cout << "Senha: ";
     cin >> senha;
 
-    cin.ignore(); // Descartar os caracteres para não misturar com o próximo
+    cin.ignore(); // Descarta os caracteres para não misturar com o próximo
 
     cout << "Endereco: ";
-    getline(cin, endereco);
+    getline(cin, endereco); // Garante que todos os caracteres da linha sejam lidos.
     
 
     Cliente cliente(nome, email, cpf, login, senha, endereco); // Cria um objeto e passa os parâmetros para ele.
-    clientes.push_back(cliente); // Adiciona o objeto criado no final do vetor de clientes.
+    clientes.push_back(cliente);                               // Adiciona o objeto criado no final do vetor de clientes.
 
     cout << "\nCadastro realizado com sucesso!\n";
 }
@@ -75,13 +75,13 @@ void Sistema::cadastrarFuncionario() {
     string nome, email, cpf, login, senha;
     int id_funcionario;
 
-    do {   // Loop para pedir um nome valido com mais de 3 letras.
+    do {   // Loop para pedir um nome valido 3 ou mais letras.
 
         cout << "\nNome: ";
         cin >> nome;
 
-        if (nome.size() < 3) {
-            cout << "Insira um nome valido com mais de 3 letras!";
+        if (nome.size() < 3) { // Obriga o nome a ter 3 ou mais letras.
+            cout << "Insira um nome valido com no minimo 3 letras!";
         }
     } while (nome.size() < 3);
 
@@ -89,7 +89,7 @@ void Sistema::cadastrarFuncionario() {
     cout << "Email: ";
     cin >> email;
 
-    for (const auto& funcionario : funcionarios) {
+    for (const auto& funcionario : funcionarios) { // Checa o vetor dos funcionários.
         if (funcionario.getEmail() == email) {     // Checa se o email já está em uso.                                    
             cout << "Email ja registrado! Por favor, escolha um email diferente.\n";
             return; 
@@ -100,12 +100,12 @@ void Sistema::cadastrarFuncionario() {
         cout << "CPF: ";
         cin >> cpf;
 
-        if (cpf.size() != 11)
+        if (cpf.size() != 11) // Permite que o CPF tenha apenas 11 digitos (xxx.xxx.xxx-xx).
             cout << "Insira um cpf valido com 11 números!\n";
     } while (cpf.size() != 11);
 
-    for (const auto& funcionario : funcionarios) {
-        if (funcionario.getCpf() == cpf) {     // Checa se o email já está em uso.                                    
+    for (const auto& funcionario : funcionarios) { // Checa o vetor dos funcionários.
+        if (funcionario.getCpf() == cpf) {         // Checa se o email já está em uso.                                    
             cout << "CPF ja registrado! Por favor, digite um CPF nao cadastrado.\n";
             return;
         }
@@ -114,7 +114,7 @@ void Sistema::cadastrarFuncionario() {
     cout << "Login: ";
     cin >> login;
 
-    for (const auto& funcionario : funcionarios) {
+    for (const auto& funcionario : funcionarios) { // Checa o vetor dos funcionários.
         if (funcionario.getLogin() == login) {     // Checa se o login já está em uso.
             cout << "Login ja existente. Por favor, escolha um login diferente.\n";
             return;
@@ -128,7 +128,7 @@ void Sistema::cadastrarFuncionario() {
     cin >> id_funcionario;
 
     Funcionario funcionario(nome, email, cpf, login, senha, id_funcionario); // Cria um objeto e passa os parâmetros para ele.
-    funcionarios.push_back(funcionario); // Adiciona o objeto criado no final do vetor de funcionarios.
+    funcionarios.push_back(funcionario);                                     // Adiciona o objeto criado no final do vetor de funcionarios.
 
     cout << "\nCadastro realizado com sucesso!\n";
 }
