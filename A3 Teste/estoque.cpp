@@ -41,7 +41,7 @@ void Estoque::adicionarProduto() {
 
 void Estoque::removerProduto(int id) {
 	if (id >= 0 && id < produtos.size()) {
-		produtos.erase(produtos.begin() + id);
+		produtos.erase(produtos.begin() + id - 1);
 		cout << "\nProduto removido do estoque!";
 	}	else {
 		cout << "\nProduto nao encontrado no estoque!";
@@ -53,15 +53,16 @@ void Estoque::exibirProdutos() const {
 		cout << "Nenhum produto em estoque!" << endl;
 	}else {
 		cout << "Itens disponiveis no estoque: " << endl;
-		for (int i = 0; i < produtos.size(); i++) {
-			const Produto& produto = produtos[i];
-			cout << "ID: " << i << endl;
-			cout << "\nNome: " << produto.getNome() << endl;
-			cout << "\nPreço: " << produto.getPreco() << endl;
-			cout << "\nTamanho: " << produto.getTamanho() << endl;
-			cout << "\nCor: " << produto.getCor() << endl;
-			cout << "\nMarca: " << produto.getMarca() << endl;
-			cout << "\nQuantidade: " << produto.getQuantidade() << endl;
+		for (const auto& produto : produtos) {
+			
+			cout << "\nID: " << produto.getId() << endl;
+			cout << "Nome: " << produto.getNome() << endl;
+			cout << "Preço: " << produto.getPreco() << endl;
+			cout << "Tamanho: " << produto.getTamanho() << endl;
+			cout << "Cor: " << produto.getCor() << endl;
+			cout << "Marca: " << produto.getMarca() << endl;
+			cout << "Quantidade: " << produto.getQuantidade() << endl;
+			cout << "=-=-=-=-=-=-=-=-=-=-=-=-=";
 		}
 	}
 }

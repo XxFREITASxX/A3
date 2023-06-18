@@ -89,6 +89,7 @@ int main() {
 			}
 
 			do {
+				cout << "\n";
 				cout << "\t\t ===============================================\n";
 				cout << "\t\t ||                                           ||\n";
 				cout << "\t\t ||             MENU ADMINISTRADOR            ||\n";
