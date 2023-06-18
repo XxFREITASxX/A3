@@ -62,13 +62,16 @@ int main() {
 			} while (!loginValido);
 
 			if (loginValido) {
-			
-			cout << "\n =-=-= Selecao de Categorias =-=-=";
-			cout << "\n (1) Camisetas";
-			cout << "\n (2) Calcas";
-			cout << "\n (3) Meias";
-			cout << "\n (4) Moletons";
-			cin >> categoria;
+
+				cout << "\n =-=-= Selecao de Categorias =-=-=";
+				cout << "\n (1) Camisetas";
+				cout << "\n (2) Calcas";
+				cout << "\n (3) Meias";
+				cout << "\n (4) Moletons";
+				cin >> categoria;
+
+				break;
+			}
 
 			switch (categoria) {
 
