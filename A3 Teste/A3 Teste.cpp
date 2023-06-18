@@ -131,13 +131,13 @@ int main() {
 			case 1:
 
 				sistema.cadastrarCliente();
-
+				sair = false;
 				break;
 
 			case 2:
 
 				sistema.cadastrarFuncionario();
-
+				sair = false;
 				break;
 			}
 			break;
@@ -233,11 +233,6 @@ int main() {
 
 			cout << "Opção inválida. Escolha uma opção válida." << endl;
 			break;
-		}
-
-		if (opcao != 4) {
-			cout << "\nPressione qualquer tecla para voltar ao menu inicial ou digite 4 para sair: ";
-			cin >> opcao;
 		}
 	} while (sair = false);
 }
