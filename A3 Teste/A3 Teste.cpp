@@ -16,6 +16,7 @@ int main() {
 	int selecao;
 	int categoria;
 	bool sair = false;
+	bool loginValido = false;
 
 	while (true) {
 		cout << "\n";
@@ -39,16 +40,28 @@ int main() {
 
 		case 1:
 
-			cout << "\nDigite seu login: ";
-			cin >> login;
-			cout << "Digite sua senha: ";
-			cin >> senha;
+			do {
+				cout << "\nDigite seu login: ";
+				cin >> login;
+				cout << "Digite sua senha: ";
+				cin >> senha;
 
-			if (sistema.autenticarCliente(login, senha)) {
-				cout << "\nLogin realizado com sucesso!\n";
-			} else {
-				cout << "\nLogin invalido! Nome de usuario ou senha incorretos.\n";
-			}
+				if (sistema.autenticarCliente(login, senha)) {
+					cout << "\nLogin realizado com sucesso!\n";
+					loginValido = true;
+				}
+				else {
+					cout << "\nLogin inválido! Nome de usuário ou senha incorretos.\n";
+					cout << "Digite 's' para tentar novamente ou qualquer outra tecla para voltar ao menu inicial: ";
+					char resposta;
+					cin >> resposta;
+					if (resposta != 's' && resposta != 'S') {
+						break;
+					}
+				}
+			} while (!loginValido);
+
+			if (loginValido) {
 			
 			cout << "\n =-=-= Selecao de Categorias =-=-=";
 			cout << "\n (1) Camisetas";
