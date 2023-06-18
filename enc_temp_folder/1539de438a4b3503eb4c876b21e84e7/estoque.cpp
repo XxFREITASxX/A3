@@ -40,15 +40,15 @@ void Estoque::adicionarProduto() {
 }
 
 void Estoque::removerProduto(int id) {
-	bool produtoRemovido = false;
+	bool produtoEncontrado = false;
 	for (auto it = produtos.begin(); it != produtos.end(); ++it) {
 		if (it->getId() == id){
 		produtos.erase(it);
-		produtoRemovido = true;
+		produtoEncontrado = true;
 		break;
 	}
 }
-if (produtoRemovido) {
+if (produtoEncontrado) {
 
 	cout << "\nProduto removido do estoque!";
 } else {
