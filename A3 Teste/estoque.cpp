@@ -15,22 +15,22 @@ void Estoque::adicionarProduto() {
 
 	cin.ignore();
 
-	cout << "\nNome do produto: ";
+	cout << "Nome do produto: ";
 	getline(cin, nome);
 
-	cout << "\nPreco do produto: R$";
+	cout << "Preco do produto: R$";
 	cin >> preco;
 
-	cout << "\nTamanho do produto: ";
+	cout << "Tamanho do produto: ";
 	cin >> tamanho;
 
-	cout << "\nCor do produto: ";
+	cout << "Cor do produto: ";
 	cin >> cor;
 
-	cout << "\nMarca do produto: ";
+	cout << "Marca do produto: ";
 	cin >> marca;
 
-	cout << "\nQuantidade do produto: ";
+	cout << "Quantidade do produto: ";
 	cin >> quantidade;
 
 	Produto produto(id, nome, preco, tamanho, cor, marca, quantidade);
@@ -58,7 +58,7 @@ if (produtoRemovido) {
 
 void Estoque::exibirProdutos() const {
 	if (produtos.empty()) {
-		cout << "Nenhum produto em estoque!" << endl;
+		cout << "\nNenhum produto em estoque!" << endl;
 	}else {
 		cout << "Itens disponiveis no estoque: " << endl;
 		cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=";
