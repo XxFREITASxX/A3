@@ -61,6 +61,7 @@ void Estoque::exibirProdutos() const {
 		cout << "Nenhum produto em estoque!" << endl;
 	}else {
 		cout << "Itens disponiveis no estoque: " << endl;
+		cout << "=-=-=-=-=-=-=-=-=-=-=-=-=";
 		for (const auto& produto : produtos) {
 			
 			cout << "\nID: " << produto.getId() << endl;

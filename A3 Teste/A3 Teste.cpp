@@ -128,8 +128,7 @@ int main() {
 					cin >> id;
 
 					estoque.removerProduto(id);
-					cout << "Produto removido do estoque!" << endl;
-
+					
 					break;
 
 				case 3:
