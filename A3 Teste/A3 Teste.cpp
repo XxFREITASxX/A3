@@ -75,7 +75,7 @@ int main() {
 
 				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
 				for (const auto& produto : estoque.getProdutos()) {
-					if (categoria == 1 && produto.getCategoria() == "Calca") {
+					if (categoria == 2 && produto.getCategoria() == "Calca") {
 						produto.exibirInfo();
 					}
 
@@ -86,7 +86,7 @@ int main() {
 
 				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
 				for (const auto& produto : estoque.getProdutos()) {
-					if (categoria == 1 && produto.getCategoria() == "Meia") {
+					if (categoria == 3 && produto.getCategoria() == "Meia") {
 						produto.exibirInfo();
 					}
 
@@ -97,7 +97,7 @@ int main() {
 
 				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
 				for (const auto& produto : estoque.getProdutos()) {
-					if (categoria == 1 && produto.getCategoria() == "Moletom") {
+					if (categoria == 4 && produto.getCategoria() == "Moletom") {
 						produto.exibirInfo();
 					}
 

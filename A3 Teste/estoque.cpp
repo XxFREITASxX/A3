@@ -6,10 +6,10 @@ using namespace std;
 
 Estoque::Estoque() {
 
-	Produto produto1(1, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "Calca");
+	Produto produto1(1, "Calca ...", 50.9, "M", "Preto", "Nike", 5, "Calca");
 	Produto produto2(2, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "Camiseta");
-	Produto produto3(3, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "Meia");
-	Produto produto4(4, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "Moletom");
+	Produto produto3(3, "Meia ...", 59.9, "M", "Preto", "Nike", 5, "Meia");
+	Produto produto4(4, "Moletom ...", 59.9, "M", "Preto", "Nike", 5, "Moletom");
 	Produto produto5(5, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "Camiseta");
 
 	produtos.push_back(produto1);
