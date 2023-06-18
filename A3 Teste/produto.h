@@ -31,6 +31,7 @@ class Produto {
 	int getQuantidade() const;
 	string getCategoria() const;
 
+	void exibirInfo() const;
 };
 
 #endif

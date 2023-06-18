@@ -17,6 +17,10 @@ class Estoque {
 		void adicionarProduto();
 		void removerProduto(int id);
 		void exibirProdutos() const;
+		void exibirCategoria(const string& categoria);
 
+		const vector<Produto>& getProdutos() const {
+			return produtos;
+		}
 };
 #endif

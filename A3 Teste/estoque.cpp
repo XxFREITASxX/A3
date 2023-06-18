@@ -6,11 +6,11 @@ using namespace std;
 
 Estoque::Estoque() {
 
-	Produto produto1(1, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "");
-	Produto produto2(2, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "");
-	Produto produto3(3, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "");
-	Produto produto4(4, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "");
-	Produto produto5(5, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "");
+	Produto produto1(1, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "Calca");
+	Produto produto2(2, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "Camiseta");
+	Produto produto3(3, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "Meia");
+	Produto produto4(4, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "Moletom");
+	Produto produto5(5, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "Camiseta");
 
 	produtos.push_back(produto1);
 	produtos.push_back(produto2);
@@ -122,6 +122,14 @@ void Estoque::exibirProdutos() const {
 			cout << "Quantidade: " << produto.getQuantidade() << endl;
 			cout << "Categoria: " << produto.getCategoria() << endl;
 			cout << "=-=-=-=-=-=-=-=-=-=-=-=-=";
+		}
+	}
+}
+
+void Estoque::exibirCategoria(const string& categoria) {
+	for (const auto& produto : produtos) {
+		if (produto.getCategoria() == categoria) {
+			produto.exibirInfo();
 		}
 	}
 }

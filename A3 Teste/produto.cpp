@@ -36,3 +36,12 @@ string Produto::getCategoria() const
 {
 	return categoria;
 }
+
+void Produto::exibirInfo() const {
+	cout << "\nNome: " << nome << endl;
+	cout << "Preco: R$" << preco << endl;
+	cout << "Tamanho: " << tamanho << endl;
+	cout << "Cor: " << cor << endl;
+	cout << "Marca: " << marca << endl;
+	cout << "Quantidade: " << quantidade << endl;
+}
