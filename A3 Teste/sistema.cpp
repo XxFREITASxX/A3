@@ -18,7 +18,7 @@ void Sistema::cadastrarCliente() {
         }
     } while (nome.size() < 3);
 
-    cout << "\nEmail: ";
+    cout << "Email: ";
     cin >> email;
 
     for (const auto& cliente : clientes) {
@@ -29,7 +29,7 @@ void Sistema::cadastrarCliente() {
     }
 
     do {
-        cout << "\nCPF: ";
+        cout << "CPF: ";
         cin >> cpf;
 
         if (cpf.size() != 11)
@@ -53,12 +53,12 @@ void Sistema::cadastrarCliente() {
         }
     }
 
-    cout << "\nSenha: ";
+    cout << "Senha: ";
     cin >> senha;
 
     cin.ignore(); // Descartar os caracteres para não misturar com o próximo
 
-    cout << "\nEndereco: ";
+    cout << "Endereco: ";
     getline(cin, endereco);
     
 
@@ -86,7 +86,7 @@ void Sistema::cadastrarFuncionario() {
     } while (nome.size() < 3);
 
 
-    cout << "\nEmail: ";
+    cout << "Email: ";
     cin >> email;
 
     for (const auto& funcionario : funcionarios) {
@@ -97,7 +97,7 @@ void Sistema::cadastrarFuncionario() {
     }
 
     do { // Loop para pedir um CPF válido de 11 números.
-        cout << "\nCPF: ";
+        cout << "CPF: ";
         cin >> cpf;
 
         if (cpf.size() != 11)
@@ -111,7 +111,7 @@ void Sistema::cadastrarFuncionario() {
         }
     }
 
-    cout << "\nLogin: ";
+    cout << "Login: ";
     cin >> login;
 
     for (const auto& funcionario : funcionarios) {
@@ -121,10 +121,10 @@ void Sistema::cadastrarFuncionario() {
         }
     }
 
-    cout << "\nSenha: ";
+    cout << "Senha: ";
     cin >> senha;
 
-    cout << "\nID: ";
+    cout << "ID: ";
     cin >> id_funcionario;
 
     Funcionario funcionario(nome, email, cpf, login, senha, id_funcionario); // Cria um objeto e passa os parâmetros para ele.

@@ -13,6 +13,13 @@ void Estoque::adicionarProduto() {
 	cout << "\nID do produto: ";
 	cin >> id;
 
+	for (const auto& produto : produtos) {
+		if (produto.getId() == id) { // Checa se já existe um produto com o id
+			cout << "\nJa existe um produto com este ID cadastrado. Porfavor, escolha outro ID.";
+			return;
+		}
+	}
+
 	cin.ignore();
 
 	cout << "Nome do produto: ";
@@ -60,13 +67,13 @@ void Estoque::exibirProdutos() const {
 	if (produtos.empty()) {
 		cout << "\nNenhum produto em estoque!" << endl;
 	}else {
-		cout << "Itens disponiveis no estoque: " << endl;
+		cout << "\nItens disponiveis no estoque: " << endl;
 		cout << "\n=-=-=-=-=-=-=-=-=-=-=-=-=";
 		for (const auto& produto : produtos) {
 			
 			cout << "\nID: " << produto.getId() << endl;
 			cout << "Nome: " << produto.getNome() << endl;
-			cout << "Preço: " << produto.getPreco() << endl;
+			cout << "Preco: " << produto.getPreco() << endl;
 			cout << "Tamanho: " << produto.getTamanho() << endl;
 			cout << "Cor: " << produto.getCor() << endl;
 			cout << "Marca: " << produto.getMarca() << endl;

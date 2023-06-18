@@ -40,7 +40,7 @@ int main() {
 
 			cout << "\nDigite seu login: ";
 			cin >> login;
-			cout << "\nDigite sua senha: ";
+			cout << "Digite sua senha: ";
 			cin >> senha;
 
 			if (sistema.autenticarCliente(login, senha)) {
@@ -76,9 +76,9 @@ int main() {
 
 		case 3:
 
-			cout << "Digite o nome de usuario: ";
+			cout << "\nDigite o nome de usuario: ";
 			cin >> login;
-			cout << "\nDigite a senha: ";
+			cout << "Digite a senha: ";
 			cin >> senha;
 
 			if (sistema.autenticarFuncionario(login, senha)) {
@@ -109,7 +109,7 @@ int main() {
 					do {
 						estoque.adicionarProduto();
 
-						cout << "Dejesa adicionar outro produto ao estoque? (S/N): ";
+						cout << "\nDejesa adicionar outro produto ao estoque? (S/N): ";
 						char resposta;
 						cin >> resposta;
 						if (resposta != 'S' && resposta != 's') {
