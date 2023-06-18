@@ -16,9 +16,8 @@ int main() {
 	int selecao;
 	int categoria;
 	bool sair = false;
-	bool loginValido = false;
 
-	while (!sair) {
+	while (true) {
 		cout << "\n";
 		cout << "\t\t ===============================================\n";
 		cout << "\t\t ||                                           ||\n";
@@ -40,49 +39,42 @@ int main() {
 
 		case 1:
 
-			do {
-				cout << "\nDigite seu login: ";
-				cin >> login;
-				cout << "Digite sua senha: ";
-				cin >> senha;
+			cout << "\nDigite seu login: ";
+			cin >> login;
+			cout << "Digite sua senha: ";
+			cin >> senha;
 
-				if (sistema.autenticarCliente(login, senha)) {
-					cout << "\nLogin realizado com sucesso!\n";
-					loginValido = true;
-				}
-				else {
-					cout << "\nLogin inválido! Nome de usuário ou senha incorretos.\n";
-					cout << "Digite 's' para tentar novamente ou qualquer outra tecla para voltar ao menu inicial: ";
-					char resposta;
-					cin >> resposta;
-					if (resposta != 's' && resposta != 'S') {
-						break;
+			if (sistema.autenticarCliente(login, senha)) {
+				cout << "\nLogin realizado com sucesso!\n";
+			}
+			else {
+				cout << "\nLogin invalido! Nome de usuario ou senha incorretos.\n";
+			}
+
+			cout << "\n =-=-= Selecao de Categorias =-=-=";
+			cout << "\n (1) Camisetas";
+			cout << "\n (2) Calcas";
+			cout << "\n (3) Meias";
+			cout << "\n (4) Moletons";
+			cin >> categoria;
+
+			switch (categoria) {
+
+			case 1:
+
+				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+				for (const auto& produto : estoque.getProdutos()) {
+					if (categoria == 1 && produto.getCategoria() == "Camiseta") {
+						produto.exibirInfo();
 					}
-				}
-			} while (!loginValido);
 
-			if (loginValido) {
-				cout << "\n =-=-= Selecao de Categorias =-=-=";
-				cout << "\n (1) Camisetas";
-				cout << "\n (2) Calcas";
-				cout << "\n (3) Meias";
-				cout << "\n (4) Moletons";
-				cin >> categoria;
-
-				switch (categoria) {
-				case 1:
-					cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-					for (const auto& produto : estoque.getProdutos()) {
-						if (produto.getCategoria() == "Camiseta") {
-							produto.exibirInfo();
-						}
-					}
-					break;
 				}
 			}
+
+
 			break;
 
-				case 2:
+		case 2:
 
 			cout << "\nSelecione o cadastro: \n" << endl;
 			cout << " (1) Cliente" << endl;
@@ -159,7 +151,7 @@ int main() {
 					cin >> id;
 
 					estoque.removerProduto(id);
-					
+
 					break;
 
 				case 3:
@@ -198,16 +190,9 @@ int main() {
 			break;
 		}
 
-		if (sair) {
-			break;
-		}
-
+		if (opcao != 4) {
 			cout << "\nPressione qualquer tecla para voltar ao menu inicial ou digite 4 para sair: ";
 			cin >> opcao;
-			if (opcao == 4) {
-				break;
 		}
 	}
-
-	return 0;
 }
