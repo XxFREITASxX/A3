@@ -9,6 +9,8 @@ void Sistema::cadastrarCliente() {
 
     string nome, email, cpf, login, senha, endereco;
 
+    // Nome
+
     do {
         cout << "\nNome: ";
         cin >> nome;
@@ -18,45 +20,83 @@ void Sistema::cadastrarCliente() {
         }
     } while (nome.size() < 3);
 
-    cout << "Email: ";
-    cin >> email;
+    // Email
 
-    for (const auto& cliente : clientes) {     // Checa o vetor dos clientes.
-        if (cliente.getEmail() == email) {     // Checa se o email já está em uso.                                    
-            cout << "\nEmail ja registrado! Por favor, escolha um email diferente.\n";
-            return;
+    do {
+        cout << "Email: ";
+        cin >> email;
+
+        bool emailEmUso = false;
+
+        for (const auto& cliente : clientes) {
+            if (cliente.getEmail() == email) {
+                cout << "\nEmail ja registrado! Por favor, escolha um email diferente.\n\n";
+                emailEmUso = true;
+                break;
+            }
         }
-    }
+
+        if (!emailEmUso) {
+            break; 
+        }
+
+    } while (true);
+
+    // CPF
 
     do {
         cout << "CPF: ";
         cin >> cpf;
 
-        if (cpf.size() != 11) // Permite que o CPF tenha apenas 11 digitos (xxx.xxx.xxx-xx).
-            cout << "\nInsira um cpf valido com 11 números!\n";
-    } while (cpf.size() != 11);
-
-    for (const auto& cliente : clientes) { // Checa o vetor dos clientes.
-        if (cliente.getCpf() == cpf) {     // Checa se o email já está em uso.                                    
-            cout << "CPF ja registrado! Por favor, digite um CPF nao cadastrado.\n";
-            return;
+        if (cpf.size() != 11) {
+            cout << "\nInsira um CPF valido com 11 numeros!\n";
         }
-    }
+        else {
+            bool cpfExistente = false;
 
-    cout << "\nLogin: ";
-    cin >> login;
+            for (const auto& cliente : clientes) {
+                if (cliente.getCpf() == cpf) {
+                    cout << "CPF ja registrado! Por favor, digite um CPF nao cadastrado.\n";
+                    cpfExistente = true;
+                    break;
+                }
+            }
 
-    for (const auto& cliente : clientes) {     // Checa o vetor dos clientes.
-        if (cliente.getLogin() == login) {     // Checa se o login já está em uso.
-            cout << "Login ja existente. Por favor, escolha um login diferente.\n";
-            return;
+            if (!cpfExistente) {
+                break;
+            }
         }
-    }
+    } while (true);
+
+    // Login
+
+    do {
+        cout << "Login: ";
+        cin >> login;
+
+        bool loginExistente = false;
+
+        for (const auto& cliente : clientes) {
+            if (cliente.getLogin() == login) {
+                cout << "Login já existente. Por favor, escolha um login diferente.\n";
+                loginExistente = true;
+                break;
+            }
+        }
+
+        if (!loginExistente) {
+            break;
+        }
+    } while (true);
+
+    // Senha
 
     cout << "Senha: ";
     cin >> senha;
 
     cin.ignore(); // Descarta os caracteres para não misturar com o próximo
+
+    // Endereco
 
     cout << "Endereco: ";
     getline(cin, endereco); // Garante que todos os caracteres da linha sejam lidos.
