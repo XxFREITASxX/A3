@@ -11,13 +11,17 @@ int main() {
 	Estoque estoque;
 
 	string login, senha;
+	int opcarrinho;
 	int opcao;
 	int opcao2;
 	int selecao;
 	int categoria;
-	bool sair = false;
+	bool sair;
 
-	while (true) {
+	do {
+
+		sair = false;
+
 		cout << "\n";
 		cout << "\t\t ===============================================\n";
 		cout << "\t\t ||                                           ||\n";
@@ -46,64 +50,74 @@ int main() {
 
 			if (sistema.autenticarCliente(login, senha)) {
 				cout << "\nLogin realizado com sucesso!\n";
+				cout << "\n=-=-= MENU USUARIO =-=-=" << endl;
+				cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
+				cout << "(2) REMOVER PRODUTO DO CARRINHO" << endl;
+				cout << "(3) EXIBIR CARRINHO" << endl;
+				cin >> opcarrinho;
+
+				switch (opcarrinho) {
+
+				case 1:
+					cout << "\n =-=-= Selecao de Categorias =-=-=";
+					cout << "\n (1) Camisetas";
+					cout << "\n (2) Calcas";
+					cout << "\n (3) Meias";
+					cout << "\n (4) Moletons";
+					cin >> categoria;
+
+					switch (categoria) {
+
+					case 1:
+
+						cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+						for (const auto& produto : estoque.getProdutos()) {
+							if (categoria == 1 && produto.getCategoria() == "Camiseta") {
+								produto.exibirInfo();
+							}
+
+						}
+						break;
+
+					case 2:
+
+						cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+						for (const auto& produto : estoque.getProdutos()) {
+							if (categoria == 2 && produto.getCategoria() == "Calca") {
+								produto.exibirInfo();
+							}
+
+						}
+						break;
+
+					case 3:
+
+						cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+						for (const auto& produto : estoque.getProdutos()) {
+							if (categoria == 3 && produto.getCategoria() == "Meia") {
+								produto.exibirInfo();
+							}
+
+						}
+						break;
+
+					case 4:
+
+						cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+						for (const auto& produto : estoque.getProdutos()) {
+							if (categoria == 4 && produto.getCategoria() == "Moletom") {
+								produto.exibirInfo();
+							}
+
+						}
+						break;
+					}
+				}
 			}
 			else {
 				cout << "\nLogin invalido! Nome de usuario ou senha incorretos.\n";
 			}
 
-			cout << "\n =-=-= Selecao de Categorias =-=-=";
-			cout << "\n (1) Camisetas";
-			cout << "\n (2) Calcas";
-			cout << "\n (3) Meias";
-			cout << "\n (4) Moletons";
-			cin >> categoria;
-
-			switch (categoria) {
-
-			case 1:
-
-				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-				for (const auto& produto : estoque.getProdutos()) {
-					if (categoria == 1 && produto.getCategoria() == "Camiseta") {
-						produto.exibirInfo();
-					}
-
-				}
-				break;
-
-			case 2:
-
-				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-				for (const auto& produto : estoque.getProdutos()) {
-					if (categoria == 2 && produto.getCategoria() == "Calca") {
-						produto.exibirInfo();
-					}
-
-				}
-				break;
-
-			case 3:
-
-				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-				for (const auto& produto : estoque.getProdutos()) {
-					if (categoria == 3 && produto.getCategoria() == "Meia") {
-						produto.exibirInfo();
-					}
-
-				}
-				break;
-
-			case 4:
-
-				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-				for (const auto& produto : estoque.getProdutos()) {
-					if (categoria == 4 && produto.getCategoria() == "Moletom") {
-						produto.exibirInfo();
-					}
-
-				}
-				break;
-			}
 
 		case 2:
 
@@ -225,5 +239,5 @@ int main() {
 			cout << "\nPressione qualquer tecla para voltar ao menu inicial ou digite 4 para sair: ";
 			cin >> opcao;
 		}
-	}
+	} while (sair = false);
 }
