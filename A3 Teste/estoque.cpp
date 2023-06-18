@@ -6,15 +6,15 @@ using namespace std;
 
 Estoque::Estoque() {
 
-	Produto produto1(1, "Camiseta DryFit", 99.99, "|P|M|GG|", "Preto", "Nike", 5, "Camiseta");
-	Produto produto2(2, "Camiseta Básica", 89.99, "M", "Preto", "Nike", 5, "Camiseta");
-	Produto produto3(3, "Camiseta Polo", 119.99, "M", "Preto", "Nike", 5, "Meia");
-	Produto produto4(4, "Camiseta Regata", 79.9, "M", "Preto", "Nike", 5, "Moletom");
-	Produto produto5(5, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "Camiseta");
-	Produto produto6(6, "Calca ...", 50.9, "M", "Preto", "Nike", 5, "Calca");
-	Produto produto7(7, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "Camiseta");
-	Produto produto8(8, "Meia ...", 59.9, "M", "Preto", "Nike", 5, "Meia");
-	Produto produto9(9, "Moletom ...", 59.9, "M", "Preto", "Nike", 5, "Moletom");
+	Produto produto1(1, "Camiseta DryFit", 99.99, "| P | M | GG |", "Preto, Branco", "Nike", 10, "Camiseta");
+	Produto produto2(2, "Camiseta Básica", 89.99, "| M | G | GG |", "Preto, Branco, Vermelho, Verde", "Nike", 29, "Camiseta");
+	Produto produto3(3, "Camiseta Polo", 119.99, "| M |", "Preto, Branco", "Nike", 5, "Camiseta");
+	Produto produto4(4, "Camiseta Regata", 79.99, "| M | G | GG |", "Preto, Branco", "Nike", 17, "Camiseta");
+	Produto produto5(5, "Calca Cargo", 209.99, "| P | M | G |", "Preto, Bege", "Nike", 10, "Calca");
+	Produto produto6(6, "Calca Moletom", 189.99, "| P | M | G | GG |", "Preto, Cinza", "Nike", 12, "Calca");
+	Produto produto7(7, "Moletom Canguru", 259.99, "| P | M | G | GG |", "Preto, Cinza, Offwhite", "Nike", 25, "Moletom");
+	Produto produto8(8, "Moletom SportsWear", 229.99, "| M | G | GG |", "Preto, Cinza", "Nike", 19, "Moletom");
+	Produto produto9(9, "Moletom TechFleece", 339.99, "| M|", "Preto", "Nike", 5, "Moletom");
 	Produto produto10(10, "Camiseta ...", 59.9, "|M|G|", "Preto", "Nike", 5, "Camiseta");
 
 	produtos.push_back(produto1);
