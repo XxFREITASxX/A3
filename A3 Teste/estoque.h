@@ -13,6 +13,7 @@ class Estoque {
 
 	public:
 
+		Estoque();
 		void adicionarProduto();
 		void removerProduto(int id);
 		void exibirProdutos() const;

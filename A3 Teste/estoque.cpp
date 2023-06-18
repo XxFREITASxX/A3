@@ -6,11 +6,11 @@ using namespace std;
 
 Estoque::Estoque() {
 
-	Produto produto1(1, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
-	Produto produto2(2, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
-	Produto produto3(3, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
-	Produto produto4(4, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
-	Produto produto5(5, "Camiseta ...", 59.99, "M", "Preto", "Nike", 5, "");
+	Produto produto1(1, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "");
+	Produto produto2(2, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "");
+	Produto produto3(3, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "");
+	Produto produto4(4, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "");
+	Produto produto5(5, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "");
 
 	produtos.push_back(produto1);
 	produtos.push_back(produto2);
@@ -23,7 +23,7 @@ Estoque::Estoque() {
 void Estoque::adicionarProduto() {
 
 	string nome, tamanho, cor, marca, tipo;
-	float preco;
+	double preco;
 	int quantidade, id;
 
 	cout << "\nID do produto: ";

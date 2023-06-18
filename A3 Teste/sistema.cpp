@@ -141,6 +141,7 @@ bool Sistema::autenticarFuncionario(const string& login, const string& senha) {
         }
     }
 
+    return false;
 }
 
 bool Sistema::autenticarCliente(const string& login, const string& senha) {
