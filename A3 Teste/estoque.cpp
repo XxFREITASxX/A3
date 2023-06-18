@@ -6,17 +6,27 @@ using namespace std;
 
 Estoque::Estoque() {
 
-	Produto produto1(1, "Calca ...", 50.9, "M", "Preto", "Nike", 5, "Calca");
-	Produto produto2(2, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "Camiseta");
-	Produto produto3(3, "Meia ...", 59.9, "M", "Preto", "Nike", 5, "Meia");
-	Produto produto4(4, "Moletom ...", 59.9, "M", "Preto", "Nike", 5, "Moletom");
+	Produto produto1(1, "Camiseta DryFit", 99.99, "|P|M|GG|", "Preto", "Nike", 5, "Camiseta");
+	Produto produto2(2, "Camiseta Básica", 89.99, "M", "Preto", "Nike", 5, "Camiseta");
+	Produto produto3(3, "Camiseta Polo", 119.99, "M", "Preto", "Nike", 5, "Meia");
+	Produto produto4(4, "Camiseta Regata", 79.9, "M", "Preto", "Nike", 5, "Moletom");
 	Produto produto5(5, "Camiseta ...", 59.9, "M", "Preto", "Nike", 5, "Camiseta");
+	Produto produto6(6, "Calca ...", 50.9, "M", "Preto", "Nike", 5, "Calca");
+	Produto produto7(7, "Camiseta ...", 50.9, "M", "Preto", "Nike", 5, "Camiseta");
+	Produto produto8(8, "Meia ...", 59.9, "M", "Preto", "Nike", 5, "Meia");
+	Produto produto9(9, "Moletom ...", 59.9, "M", "Preto", "Nike", 5, "Moletom");
+	Produto produto10(10, "Camiseta ...", 59.9, "|M|G|", "Preto", "Nike", 5, "Camiseta");
 
 	produtos.push_back(produto1);
 	produtos.push_back(produto2);
 	produtos.push_back(produto3);
 	produtos.push_back(produto4);
 	produtos.push_back(produto5);
+	produtos.push_back(produto6);
+	produtos.push_back(produto7);
+	produtos.push_back(produto8);
+	produtos.push_back(produto9);
+	produtos.push_back(produto10);
 
 }
 

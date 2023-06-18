@@ -63,7 +63,7 @@ int main() {
 					cout << "\n (1) Camisetas";
 					cout << "\n (2) Calcas";
 					cout << "\n (3) Meias";
-					cout << "\n (4) Moletons";
+					cout << "\n (4) Moletons\n";
 					cin >> categoria;
 
 					switch (categoria) {
@@ -131,15 +131,17 @@ int main() {
 			case 1:
 
 				sistema.cadastrarCliente();
-				sair = false;
+				
 				break;
 
 			case 2:
 
 				sistema.cadastrarFuncionario();
-				sair = false;
+				
 				break;
 			}
+
+			sair = false;
 			break;
 
 		case 3:
@@ -234,5 +236,5 @@ int main() {
 			cout << "Opção inválida. Escolha uma opção válida." << endl;
 			break;
 		}
-	} while (sair = false);
+	} while (!sair);
 }
