@@ -62,7 +62,6 @@ int main() {
 			} while (!loginValido);
 
 			if (loginValido) {
-
 				cout << "\n =-=-= Selecao de Categorias =-=-=";
 				cout << "\n (1) Camisetas";
 				cout << "\n (2) Calcas";
@@ -70,26 +69,20 @@ int main() {
 				cout << "\n (4) Moletons";
 				cin >> categoria;
 
-				break;
-			}
-
-			switch (categoria) {
-
+				switch (categoria) {
 				case 1:
-
 					cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
 					for (const auto& produto : estoque.getProdutos()) {
-						if (categoria == 1 && produto.getCategoria() == "Camiseta") {
+						if (produto.getCategoria() == "Camiseta") {
 							produto.exibirInfo();
 						}
-
 					}
+					break;
+				}
 			}
-
-
 			break;
 
-		case 2:
+				case 2:
 
 			cout << "\nSelecione o cadastro: \n" << endl;
 			cout << " (1) Cliente" << endl;
@@ -205,9 +198,14 @@ int main() {
 			break;
 		}
 
-		if (opcao != 4) {
+		if (sair) {
+			break;
+		}
+
 			cout << "\nPressione qualquer tecla para voltar ao menu inicial ou digite 4 para sair: ";
 			cin >> opcao;
+			if (opcao == 4) {
+				break;
 		}
 	}
 }
