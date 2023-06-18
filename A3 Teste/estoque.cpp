@@ -22,53 +22,67 @@ Estoque::Estoque() {
 
 void Estoque::adicionarProduto() {
 
-	string nome, tamanho, cor, marca, tipo;
+	string nome, tamanho, cor, marca, categoria;
 	double preco;
 	int quantidade, id;
 
-	cout << "\nID do produto: ";
-	cin >> id;
+	do {
+		cout << "\nID do produto: ";
+		cin >> id;
+		cin.ignore();
 
-	for (const auto& produto : produtos) { // Percorre os produtos que estao no vetor de produtos
-		if (produto.getId() == id) {       // Checa se já existe um produto cadastrado com esse ID
-			cout << "\nJa existe um produto com este ID cadastrado. Porfavor, escolha outro ID.";
-			return;
-		}
-	}
-
-	cin.ignore();
+		if (id <= 0) {
+			cout << "ID invalido! O ID deve ser um valor inteiro maior que zero.\n";
+		} else {
+			bool idDuplicado = false;
+			for (const auto& produto : produtos) {
+				if (produto.getId() == id) {
+					idDuplicado = true;
+					cout << "\nJa existe um produto com este ID cadastrado. Por favor, escolha outro ID.\n";
+					break;
+				}
+			}
+			if (!idDuplicado) {
+				break;
+			}
+		  }
+	} while (true);
 
 	cout << "Nome do produto: ";
 	getline(cin, nome);
 
 	cout << "Preco do produto: R$";
 	cin >> preco;
+	cin.ignore();
+
 
 	cout << "Tamanho do produto: ";
 	cin >> tamanho;
 
 	cout << "Cor do produto: ";
-	cin >> cor;
+	cin.ignore();
+	getline(cin, cor);
 
 	cout << "Marca do produto: ";
-	cin >> marca;
+	getline(cin, marca);
 
 	cout << "Quantidade do produto: ";
 	cin >> quantidade;
+	cin.ignore();
 
 	do {
-		cout << "Tipo do produto (Camiseta, Meia, Calca, Moletom): ";
-		cin >> tipo;
+		cout << "Categoria do produto (Camiseta, Meia, Calca, Moletom): ";
+		cin >> categoria;
 
-		if (tipo == "Camiseta" || tipo == "camiseta" || tipo == "Meia" || tipo == "meia" || tipo == "Calca" || tipo == "calca" || tipo == "Moletom" || tipo == "moletom") {
+		if (categoria == "Camiseta" || categoria == "camiseta" || categoria == "Meia" || categoria == "meia" || categoria == "Calca" || categoria == "calca" || categoria == "Moletom" || categoria == "moletom") {
 			break;
 		}
 		else {
-			cout << "Tipo inválido! Por favor, digite um tipo válido (Camiseta/camiseta | Meia/meia | Calca/calca | Moletom/moletom).";
+			cout << "Categoria invalida! Por favor, digite uma categoria valida (Camiseta/camiseta | Meia/meia | Calca/calca | Moletom/moletom).";
 		}
 	} while (true);
 
-	Produto produto(id, nome, preco, tamanho, cor, marca, quantidade, tipo);  // Cria o objeto do tipo produto e passa os valores fornecidos como argumentos para o construtor 'Produto'
+	Produto produto(id, nome, preco, tamanho, cor, marca, quantidade, categoria);  // Cria o objeto do tipo produto e passa os valores fornecidos como argumentos para o construtor 'Produto'
 	produtos.push_back(produto);									          // Adiciona o objeto 'produto' ao final do vetor de produtos
 
 	cout << "\nProduto adicionado ao estoque!\n";
@@ -106,7 +120,7 @@ void Estoque::exibirProdutos() const {
 			cout << "Cor: " << produto.getCor() << endl;
 			cout << "Marca: " << produto.getMarca() << endl;
 			cout << "Quantidade: " << produto.getQuantidade() << endl;
-			cout << "Tipo: " << produto.getTipo() << endl;
+			cout << "Categoria: " << produto.getCategoria() << endl;
 			cout << "=-=-=-=-=-=-=-=-=-=-=-=-=";
 		}
 	}

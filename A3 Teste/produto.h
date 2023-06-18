@@ -16,11 +16,11 @@ class Produto {
 	string cor;
 	string marca;
 	int quantidade;
-	string tipo;
+	string categoria;
 
 	public:
 
-	Produto(int id,const string& _nome, double _preco, const string& _tamanho, const string& _cor, const string& _marca, int quantidade, const string& tipo);
+	Produto(int id,const string& _nome, double _preco, const string& _tamanho, const string& _cor, const string& _marca, int quantidade, const string& categoria);
 
 	int getId() const;
 	string getNome() const;
@@ -29,7 +29,7 @@ class Produto {
 	string getCor() const;
 	string getMarca() const;
 	int getQuantidade() const;
-	string getTipo() const;
+	string getCategoria() const;
 
 };
 
