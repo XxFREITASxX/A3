@@ -18,7 +18,7 @@ int main() {
 	bool sair = false;
 	bool loginValido = false;
 
-	while (true) {
+	while (!sair) {
 		cout << "\n";
 		cout << "\t\t ===============================================\n";
 		cout << "\t\t ||                                           ||\n";
