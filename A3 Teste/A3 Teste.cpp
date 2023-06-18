@@ -69,10 +69,41 @@ int main() {
 					}
 
 				}
+				break;
+
+			case 2:
+
+				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+				for (const auto& produto : estoque.getProdutos()) {
+					if (categoria == 1 && produto.getCategoria() == "Calca") {
+						produto.exibirInfo();
+					}
+
+				}
+				break;
+
+			case 3:
+
+				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+				for (const auto& produto : estoque.getProdutos()) {
+					if (categoria == 1 && produto.getCategoria() == "Meia") {
+						produto.exibirInfo();
+					}
+
+				}
+				break;
+
+			case 4:
+
+				cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+				for (const auto& produto : estoque.getProdutos()) {
+					if (categoria == 1 && produto.getCategoria() == "Moletom") {
+						produto.exibirInfo();
+					}
+
+				}
+				break;
 			}
-
-
-			break;
 
 		case 2:
 
