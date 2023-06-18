@@ -124,7 +124,7 @@ int main() {
 
 					int id;
 
-					cout << "Digite o ID do produto a ser removido: ";
+					cout << "\nDigite o ID do protudo a ser removido: ";
 					cin >> id;
 
 					estoque.removerProduto(id);
