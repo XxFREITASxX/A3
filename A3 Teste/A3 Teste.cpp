@@ -2,6 +2,7 @@
 #include <vector>
 #include "sistema.h"
 #include "estoque.h"
+#include "carrinho.h"
 
 using namespace std;
 
@@ -9,6 +10,7 @@ int main() {
 
 	Sistema sistema;
 	Estoque estoque;
+	Carrinho carrinho;
 
 	string login, senha;
 	int opcarrinho;
@@ -54,64 +56,123 @@ int main() {
 				cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
 				cout << "(2) REMOVER PRODUTO DO CARRINHO" << endl;
 				cout << "(3) EXIBIR CARRINHO" << endl;
+
 				cin >> opcarrinho;
 
-				switch (opcarrinho) {
-
-				case 1:
-					cout << "\n =-=-= Selecao de Categorias =-=-=";
-					cout << "\n (1) Camisetas";
-					cout << "\n (2) Calcas";
-					cout << "\n (3) Meias";
-					cout << "\n (4) Moletons\n";
-					cin >> categoria;
-
-					switch (categoria) {
+				while (true) {
+					switch (opcarrinho) {
 
 					case 1:
+						cout << "\n =-=-= Selecao de Categorias =-=-=";
+						cout << "\n (1) Camisetas";
+						cout << "\n (2) Calcas";
+						cout << "\n (3) Meias";
+						cout << "\n (4) Moletons\n";
+						cin >> categoria;
 
-						cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-						for (const auto& produto : estoque.getProdutos()) {
-							if (categoria == 1 && produto.getCategoria() == "Camiseta") {
-								produto.exibirInfo();
+
+						switch (categoria) {
+
+						case 1:
+
+							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+							for (const auto& produto : estoque.getProdutos()) {
+								if (categoria == 1 && produto.getCategoria() == "Camiseta") {
+									produto.exibirInfo();
+								}
+
 							}
 
+							int id;
+
+							cout << "\nDigite o ID do produto a ser adicionado ao carrinho: ";
+							cin >> id;
+							carrinho.addProduto(estoque.getProdutos(), id);
+							break;
+
+						case 2:
+
+							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+							for (const auto& produto : estoque.getProdutos()) {
+								if (categoria == 2 && produto.getCategoria() == "Calca") {
+									produto.exibirInfo();
+								}
+
+							}
+
+							cout << "\nDigite o ID do produto a ser adicionado ao carrinho: ";
+							cin >> id;
+							carrinho.addProduto(estoque.getProdutos(), id);
+
+							break;
+
+						case 3:
+
+							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+							for (const auto& produto : estoque.getProdutos()) {
+								if (categoria == 3 && produto.getCategoria() == "Meia") {
+									produto.exibirInfo();
+								}
+
+							}
+
+							cout << "\nDigite o ID do produto a ser adicionado ao carrinho: ";
+							cin >> id;
+							carrinho.addProduto(estoque.getProdutos(), id);
+
+							break;
+
+						case 4:
+
+							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
+							for (const auto& produto : estoque.getProdutos()) {
+								if (categoria == 4 && produto.getCategoria() == "Moletom") {
+									produto.exibirInfo();
+								}
+
+							}
+
+							cout << "\nDigite o ID do produto a ser adicionado ao carrinho: ";
+							cin >> id;
+							carrinho.addProduto(estoque.getProdutos(), id);
+
+							break;
 						}
 						break;
 
 					case 2:
 
-						cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-						for (const auto& produto : estoque.getProdutos()) {
-							if (categoria == 2 && produto.getCategoria() == "Calca") {
-								produto.exibirInfo();
-							}
+						int id;
 
-						}
+						carrinho.exibeCarrinho();
+						cout << "\nDigite o ID do produto a ser removido do carrinho: ";
+						cin >> id;
+						carrinho.removeProduto(estoque.getProdutos(), id);
+
 						break;
 
 					case 3:
 
-						cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-						for (const auto& produto : estoque.getProdutos()) {
-							if (categoria == 3 && produto.getCategoria() == "Meia") {
-								produto.exibirInfo();
-							}
+						carrinho.exibeCarrinho();
 
-						}
 						break;
 
-					case 4:
-
-						cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-						for (const auto& produto : estoque.getProdutos()) {
-							if (categoria == 4 && produto.getCategoria() == "Moletom") {
-								produto.exibirInfo();
-							}
-
-						}
+					default:
+						cout << "Opção Invalida. Escolha uma opcao valida.\n";
 						break;
 					}
+
+					cout << "\n =-=-= MENU USUARIO =-=-=" << endl;
+					cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
+					cout << "\n(2) REMOVER PRODUTO DO CARRINHO" << endl;
+					cout << "\n(3) EXIBIR CARRINHO" << endl;
+					cout << "\n(0) SAIR" << endl;
+					cin >> opcarrinho;
+
+					if (opcarrinho == 0) {
+						return 0;
+					}
+
 				}
 			}
 			else {

@@ -44,6 +44,7 @@ void Produto::exibirInfo() const {
 	cout << "Tamanho: " << tamanho << endl;
 	cout << "Cor: " << cor << endl;
 	cout << "Marca: " << marca << endl;
-	cout << "Quantidade: " << quantidade << endl;
+	cout << "Quantidade no Estoque: " << quantidade << endl;
 	cout << "=-=-=-=-=-=-=-=-=-=-=-=-=";
 }
+

@@ -12,3 +12,4 @@ string Cliente::getEndereco() const {
 void Cliente::setEndereco(const string& endereco) {
     this->endereco = endereco;
 }
+
