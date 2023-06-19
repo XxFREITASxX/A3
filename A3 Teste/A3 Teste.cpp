@@ -56,6 +56,7 @@ int main() {
 				cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
 				cout << "(2) REMOVER PRODUTO DO CARRINHO" << endl;
 				cout << "(3) EXIBIR CARRINHO" << endl;
+				cout << "(4) PAGAMENTO (NAO IMPLEMENTADO)" << endl;
 
 				cin >> opcarrinho;
 
@@ -156,6 +157,10 @@ int main() {
 						carrinho.exibeCarrinho();
 
 						break;
+
+					case 4:
+
+						cout << "\nA opcao pagamento ainda nao foi implementada.";
 
 					default:
 						cout << "Opçao Invalida. Escolha uma opcao valida.\n";
@@ -294,7 +299,7 @@ int main() {
 
 		default:
 
-			cout << "Opcao invalida. Escolha uma opçao valida." << endl;
+			cout << "Opcao invalida. Escolha uma opcao valida." << endl;
 			break;
 		}
 	} while (!sair);
