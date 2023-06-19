@@ -16,7 +16,7 @@ void Sistema::cadastrarCliente() {
         cin >> nome;
 
         if (nome.size() < 3) { // Obriga o nome a ter 3 ou mais letras.
-            cout << "\nInsira um nome valido com mais de 3 letras!\n";
+            cout << "\nInsira um nome valido com no minimo 3 letras!\n";
         }
     } while (nome.size() < 3);
 
@@ -123,7 +123,7 @@ void Sistema::cadastrarFuncionario() {
         cin >> nome;
 
         if (nome.size() < 3) { // Obriga o nome a ter 3 ou mais letras.
-            cout << "Insira um nome valido com no minimo 3 letras!";
+            cout << "\nInsira um nome valido com no minimo 3 letras!\n";
         }
     } while (nome.size() < 3);
 

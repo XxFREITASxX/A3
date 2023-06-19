@@ -149,3 +149,12 @@ void Estoque::exibirCategoria(const string& categoria) {
 		}
 	}
 }
+
+void Estoque::diminuirQuantidade(int id, int quantidade) {
+	for (auto& produto : produtos) {
+		if (produto.getId() == id) {
+			produto.setQuantidade(produto.getQuantidade() - quantidade);
+			break;
+		}
+	}
+}

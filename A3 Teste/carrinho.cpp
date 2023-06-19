@@ -9,7 +9,7 @@ using namespace std;
 
 Carrinho::Carrinho() {}
 
-void Carrinho::addProduto(const vector<Produto>& estoque, int id){
+void Carrinho::addProduto(const vector<Produto>& estoque, int id) {
     for (const auto& produto : estoque) {
         if (produto.getId() == id) {
             produtos.push_back(produto);
