@@ -17,7 +17,7 @@ void Carrinho::addProduto(const vector<Produto>& estoque, int id){
             return;
         }
     }
-    cout << "\nProduto não encontrado no estoque.\n";
+    cout << "\nProduto nao encontrado no estoque.\n";
 }
 
 void Carrinho::removeProduto(const vector<Produto>& estoque, int id) {
@@ -28,13 +28,13 @@ void Carrinho::removeProduto(const vector<Produto>& estoque, int id) {
                 return;
             }
         }
-        cout << "\nProduto não encontrado no carrinho!\n";
+        cout << "\nProduto nao encontrado no carrinho!\n";
     }
 
 void Carrinho::exibeCarrinho() {
-        cout << "\n=== Carrinho de Compras ===\n";
+        cout << "\n=-=-= Carrinho de Compras =-=-=\n";
         if (produtos.empty()) {
-            cout << "\nO carrinho está vazio.\n";
+            cout << "\nO carrinho esta vazio.\n";
         }
         else {
             for (int i = 0; i < produtos.size(); i++) {

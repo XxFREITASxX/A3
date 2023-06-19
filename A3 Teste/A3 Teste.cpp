@@ -158,7 +158,7 @@ int main() {
 						break;
 
 					default:
-						cout << "Opção Invalida. Escolha uma opcao valida.\n";
+						cout << "Opçao Invalida. Escolha uma opcao valida.\n";
 						break;
 					}
 
@@ -178,6 +178,7 @@ int main() {
 			else {
 				cout << "\nLogin invalido! Nome de usuario ou senha incorretos.\n";
 			}
+			break;
 
 
 		case 2:
@@ -192,13 +193,13 @@ int main() {
 			case 1:
 
 				sistema.cadastrarCliente();
-				
+
 				break;
 
 			case 2:
 
 				sistema.cadastrarFuncionario();
-				
+
 				break;
 			}
 
@@ -214,10 +215,6 @@ int main() {
 
 			if (sistema.autenticarFuncionario(login, senha)) {
 				cout << "\nLogin realizado com sucesso!\n";
-			}
-			else {
-				cout << "\nLogin inválido!\n";
-			}
 
 			do {
 				cout << "\n";
@@ -286,6 +283,9 @@ int main() {
 			sair = false;
 
 			break;
+		}	else {
+				cout << "\nLogin invalido!\n";
+			}
 
 		case 4:
 
@@ -294,7 +294,7 @@ int main() {
 
 		default:
 
-			cout << "Opção inválida. Escolha uma opção válida." << endl;
+			cout << "Opcao invalida. Escolha uma opçao valida." << endl;
 			break;
 		}
 	} while (!sair);

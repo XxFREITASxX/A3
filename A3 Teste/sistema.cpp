@@ -78,7 +78,7 @@ void Sistema::cadastrarCliente() {
 
         for (const auto& cliente : clientes) {
             if (cliente.getLogin() == login) {
-                cout << "\nLogin já existente. Por favor, escolha um login diferente.\n\n";
+                cout << "\nLogin ja existente. Por favor, escolha um login diferente.\n\n";
                 loginExistente = true;
                 break;
             }
@@ -185,7 +185,7 @@ void Sistema::cadastrarFuncionario() {
 
         for (const auto& funcionario : funcionarios) { // Checa o vetor dos funcinários.
             if (funcionario.getLogin() == login) {     // Checa se o login ja esta em uso.
-                cout << "\nLogin já existente. Por favor, escolha um login diferente.\n\n";
+                cout << "\nLogin ja existente. Por favor, escolha um login diferente.\n\n";
                 loginExistente = true;
                 break;
             }
