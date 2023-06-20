@@ -39,7 +39,7 @@ int main() {
 		cout << "| Pressione (4) para SAIR                      |\n";
 		cout << endl;
 		cout << endl;
-		cin >> opcao; // Variável para armazenar a opção escolhida
+		cin >> opcao;
 
 		switch (opcao) {
 
