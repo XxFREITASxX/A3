@@ -173,8 +173,8 @@ int main() {
 					cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
 					cout << "\n(2) REMOVER PRODUTO DO CARRINHO" << endl;
 					cout << "\n(3) EXIBIR CARRINHO" << endl;
-					cout << "\n(4) PAGAMENTO (NAO IMPLEMENTADO)\n" << endl;
-					cout << "\n(0) SAIR" << endl;
+					cout << "\n(4) PAGAMENTO (NAO IMPLEMENTADO)" << endl;
+					cout << "\n(0) SAIR\n" << endl;
 					cin >> opcarrinho;
 
 					if (opcarrinho == 0) {
@@ -191,7 +191,7 @@ int main() {
 
 		case 2:
 
-			cout << "\nSelecione o cadastro: \n" << endl;
+			cout << "\n=-=-= Selecione o cadastro =-=-= \n" << endl;
 			cout << " (1) Cliente" << endl;
 			cout << " (2) Funcionario\n" << endl;
 			cin >> selecao;
