@@ -56,7 +56,7 @@ int main() {
 				cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
 				cout << "(2) REMOVER PRODUTO DO CARRINHO" << endl;
 				cout << "(3) EXIBIR CARRINHO" << endl;
-				cout << "(4) PAGAMENTO (NAO IMPLEMENTADO)" << endl;
+				cout << "(4) PAGAMENTO (NAO IMPLEMENTADO)\n" << endl;
 
 				cin >> opcarrinho;
 
@@ -68,7 +68,7 @@ int main() {
 						cout << "\n (1) Camisetas";
 						cout << "\n (2) Calcas";
 						cout << "\n (3) Meias";
-						cout << "\n (4) Moletons\n";
+						cout << "\n (4) Moletons\n" << endl;
 						cin >> categoria;
 
 
@@ -173,7 +173,7 @@ int main() {
 					cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
 					cout << "\n(2) REMOVER PRODUTO DO CARRINHO" << endl;
 					cout << "\n(3) EXIBIR CARRINHO" << endl;
-					cout << "\n(4) PAGAMENTO (NAO IMPLEMENTADO)" << endl;
+					cout << "\n(4) PAGAMENTO (NAO IMPLEMENTADO)\n" << endl;
 					cout << "\n(0) SAIR" << endl;
 					cin >> opcarrinho;
 
