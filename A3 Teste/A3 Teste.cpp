@@ -13,12 +13,12 @@ int main() {
 	Carrinho carrinho;
 
 	string login, senha;
-	int opcarrinho;
-	int opcao;
-	int opcao2;
-	int selecao;
-	int categoria;
-	bool sair;
+	int opcarrinho; 
+	int opcao; 
+	int opcao2; 
+	int selecao; 
+	int categoria; 
+	bool sair; 
 
 	do {
 
@@ -60,7 +60,7 @@ int main() {
 
 				cin >> opcarrinho;
 
-				while (true) {
+				while (true) { 
 					switch (opcarrinho) {
 
 					case 1:
@@ -77,9 +77,9 @@ int main() {
 						case 1:
 
 							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-							for (const auto& produto : estoque.getProdutos()) {                // Exibe os produtos da categoria selecionada.
-								if (categoria == 1 && produto.getCategoria() == "Camiseta") {
-									produto.exibirInfo();
+							for (const auto& produto : estoque.getProdutos()) { // Percorre todos os produtos do Estoque.
+								if (categoria == 1 && produto.getCategoria() == "Camiseta") { // Verifica a categoria selecionada.
+									produto.exibirInfo(); // Exibe as informações do produto.
 								}
 
 							}
@@ -94,25 +94,25 @@ int main() {
 						case 2:
 
 							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-							for (const auto& produto : estoque.getProdutos()) {
-								if (categoria == 2 && produto.getCategoria() == "Calca") {
-									produto.exibirInfo();
+							for (const auto& produto : estoque.getProdutos()) { // Percorre todos os produtos do estoque.
+								if (categoria == 2 && produto.getCategoria() == "Calca") { // Verifica a categoria selecionada.
+									produto.exibirInfo(); // Exibe as informações do produto.
 								}
 
 							}
 
 							cout << "\nDigite o ID do produto a ser adicionado ao carrinho: ";
 							cin >> id;
-							carrinho.addProduto(estoque.getProdutos(), id);
+							carrinho.addProduto(estoque.getProdutos(), id); // Adiciona o produto que possui o ID selecionado ao carrinho.
 
 							break;
 
 						case 3:
 
 							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-							for (const auto& produto : estoque.getProdutos()) {
-								if (categoria == 3 && produto.getCategoria() == "Meia") {
-									produto.exibirInfo();
+							for (const auto& produto : estoque.getProdutos()) { // Percorre todos os produtos do estoque.
+								if (categoria == 3 && produto.getCategoria() == "Meia") { // Verifica a categoria selecionada.
+									produto.exibirInfo(); // Exibe as informações do produto.
 								}
 
 							}
@@ -126,9 +126,9 @@ int main() {
 						case 4:
 
 							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-							for (const auto& produto : estoque.getProdutos()) {
-								if (categoria == 4 && produto.getCategoria() == "Moletom") {
-									produto.exibirInfo();
+							for (const auto& produto : estoque.getProdutos()) { // Percorre todos os produtos do estoque.
+								if (categoria == 4 && produto.getCategoria() == "Moletom") { // Verifica a categoria selecionada.
+									produto.exibirInfo(); // Exibe as informações do produto.
 								}
 
 							}
@@ -234,7 +234,7 @@ int main() {
 				cout << endl;
 				cout << "| (1) Adicionar produto ao estoque |\n";
 				cout << "| (2) Remover produto do estoque   |\n";
-				cout << "| (3) Eixibir produtos do estoque  |\n";
+				cout << "| (3) Exibir produtos do estoque  |\n";
 				cout << "| (4) SAIR                         |\n";
 				cin >> opcao2;
 

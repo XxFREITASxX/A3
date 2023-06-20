@@ -18,7 +18,6 @@ class Estoque {
 		void removerProduto(int id);
 		void exibirProdutos() const;
 		void exibirCategoria(const string& categoria);
-		void diminuirQuantidade(int id, int quantidade);
 
 		const vector<Produto>& getProdutos() const {
 			return produtos;

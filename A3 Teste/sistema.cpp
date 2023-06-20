@@ -95,7 +95,7 @@ void Sistema::cadastrarCliente() {
     cout << "Senha: ";
     cin >> senha;
 
-    cin.ignore(); // Descarta os caracteres para não misturar com o próximo
+    cin.ignore(); // Descarta os caracteres para não misturar com o próximo.
 
     // Endereco
 

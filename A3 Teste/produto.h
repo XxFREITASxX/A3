@@ -31,8 +31,6 @@ class Produto {
 	int getQuantidade() const;
 	string getCategoria() const;
 
-	void setQuantidade(int novoQuantidade);
-
 	void exibirInfo() const;
 };
 

@@ -10,9 +10,9 @@ using namespace std;
 Carrinho::Carrinho() {}
 
 void Carrinho::addProduto(const vector<Produto>& estoque, int id) {
-    for (const auto& produto : estoque) {
-        if (produto.getId() == id) {
-            produtos.push_back(produto);
+    for (const auto& produto : estoque) { // Percorre os produtos do estoque.
+        if (produto.getId() == id) { // Checa se o ID do produto é igual ao ID fornecido.
+            produtos.push_back(produto); // Adiciona o produto no vetor de produtos do carrinho.
             cout << "\nProduto adiconado ao carrinho com sucesso!\n";
             return;
         }
@@ -21,9 +21,9 @@ void Carrinho::addProduto(const vector<Produto>& estoque, int id) {
 }
 
 void Carrinho::removeProduto(const vector<Produto>& estoque, int id) {
-        for (auto it = produtos.begin(); it != produtos.end(); ++it) {
-            if (it->getId() == id) {
-                produtos.erase(it);
+        for (auto it = produtos.begin(); it != produtos.end(); ++it) { // Percorre os produtos do carrinho, começando pelo inicio do vetor.
+            if (it->getId() == id) { // Checa se o ID do produto é igual ao ID que foi fornecido.
+                produtos.erase(it); // Remove o produto do carrinho.
                 cout << "\nProduto removido do carrinho com sucesso!\n";
                 return;
             }
@@ -33,13 +33,13 @@ void Carrinho::removeProduto(const vector<Produto>& estoque, int id) {
 
 void Carrinho::exibeCarrinho() {
         cout << "\n=-=-= Carrinho de Compras =-=-=\n";
-        if (produtos.empty()) {
+        if (produtos.empty()) { // Verifica se o carrinho está vazio.
             cout << "\nO carrinho esta vazio.\n";
         }
         else {
             for (int i = 0; i < produtos.size(); i++) {
                 cout << "Produto " << i + 1 << ":\n";
-                produtos[i].exibirInfo();
+                produtos[i].exibirInfo(); // Exibe as informações do produto.
                 cout << "\n";
             }
         }

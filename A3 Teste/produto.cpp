@@ -37,10 +37,6 @@ string Produto::getCategoria() const
 	return categoria;
 }
 
-void Produto::setQuantidade(int novoQuantidade) {
-	quantidade = novoQuantidade;
-}
-
 void Produto::exibirInfo() const {
 	cout << "\nID: " << id << endl;
 	cout << "Nome: " << nome << endl;

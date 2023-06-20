@@ -6,19 +6,19 @@ using namespace std;
 
 Estoque::Estoque() {
 
-	Produto produto1(1, "Camiseta DryFit", 99.99, "| P | M | GG |", "Preto, Branco", "Nike", 10, "Camiseta");
-	Produto produto2(2, "Camiseta Básica", 89.99, "| M | G | GG |", "Preto, Branco, Vermelho, Verde", "Nike", 29, "Camiseta");
+	Produto produto1(1, "Camiseta DryFit", 99.99, "| P |", "Preto, Branco", "Nike", 10, "Camiseta");
+	Produto produto2(2, "Camiseta Básica", 89.99, "| M |", "Preto, Branco, Vermelho, Verde", "Nike", 29, "Camiseta");
 	Produto produto3(3, "Camiseta Polo", 119.99, "| M |", "Preto, Branco", "Nike", 5, "Camiseta");
-	Produto produto4(4, "Camiseta Regata", 79.99, "| M | G | GG |", "Preto, Branco", "Nike", 17, "Camiseta");
-	Produto produto5(5, "Calca Cargo", 209.99, "| P | M | G |", "Preto, Bege", "Nike", 10, "Calca");
-	Produto produto6(6, "Calca Moletom", 189.99, "| P | M | G | GG |", "Preto, Cinza", "Nike", 12, "Calca");
+	Produto produto4(4, "Camiseta Regata", 79.99, "| M |", "Preto, Branco", "Nike", 17, "Camiseta");
+	Produto produto5(5, "Calca Cargo", 209.99, "| G |", "Preto, Bege", "Nike", 10, "Calca");
+	Produto produto6(6, "Calca Moletom", 189.99, "| P |", "Preto, Cinza", "Nike", 12, "Calca");
 	Produto produto7(7, "Calca TechFleece", 309.99, "| M |", "Preto, Branco", "Nike", 3, "Calca");
-	Produto produto8(8, "Moletom Canguru", 259.99, "| P | M | G | GG |", "Preto, Cinza, Offwhite", "Nike", 25, "Moletom");
-	Produto produto9(9, "Moletom SportsWear", 229.99, "| M | G | GG |", "Preto, Cinza", "Nike", 19, "Moletom");
+	Produto produto8(8, "Moletom Canguru", 259.99, "| M |", "Preto, Cinza, Offwhite", "Nike", 25, "Moletom");
+	Produto produto9(9, "Moletom SportsWear", 229.99, "| GG |", "Preto, Cinza", "Nike", 19, "Moletom");
 	Produto produto10(10, "Moletom TechFleece", 339.99, "| M |", "Preto, Branco", "Nike", 3, "Moletom");
-	Produto produto11(11, "Moletom Careca", 159.99, "| PP | P | M | G |", "Preto, Cinza, Offwhite", "Nike", 14, "Moletom");
-	Produto produto12(12, "Meia Cano alto (3 pares)", 59.99, "| P | M | G | GG |", "Preto, Cinza, Branco", "Nike", 30, "Meia");
-	Produto produto13(13, "Meia Cano Baixo (3 pares)", 59.99, "| P | M | G | GG |", "Preto, Cinza, Branco", "Nike", 25, "Meia");
+	Produto produto11(11, "Moletom Careca", 159.99, "| M |", "Preto, Cinza, Offwhite", "Nike", 14, "Moletom");
+	Produto produto12(12, "Meia Cano alto (3 pares)", 59.99, "| G |", "Preto, Cinza, Branco", "Nike", 30, "Meia");
+	Produto produto13(13, "Meia Cano Baixo (3 pares)", 59.99, "| P |", "Preto, Cinza, Branco", "Nike", 25, "Meia");
 
 
 	produtos.push_back(produto1);
@@ -150,11 +150,5 @@ void Estoque::exibirCategoria(const string& categoria) {
 	}
 }
 
-void Estoque::diminuirQuantidade(int id, int quantidade) {
-	for (auto& produto : produtos) {
-		if (produto.getId() == id) {
-			produto.setQuantidade(produto.getQuantidade() - quantidade);
-			break;
-		}
-	}
-}
+
+
