@@ -28,7 +28,7 @@ void Sistema::cadastrarCliente() {
 
         bool emailEmUso = false;
 
-        for (const auto& cliente : clientes) {
+        for (const auto& cliente : clientes) { // Verifica no vetor de clientes se ja existe um cliente com o Email informado
             if (cliente.getEmail() == email) {
                 cout << "\nEmail ja registrado! Por favor, escolha um email diferente.\n\n";
                 emailEmUso = true;
@@ -54,7 +54,7 @@ void Sistema::cadastrarCliente() {
         else {
             bool cpfExistente = false;
 
-            for (const auto& cliente : clientes) {
+            for (const auto& cliente : clientes) {  // Verifica no vetor de clientes se ja existe um cliente com o CPF informado
                 if (cliente.getCpf() == cpf) {
                     cout << "\nCPF ja registrado! Por favor, digite um CPF nao cadastrado.\n\n";
                     cpfExistente = true;
@@ -66,6 +66,7 @@ void Sistema::cadastrarCliente() {
                 break;
             }
         }
+  
     } while (true);
 
     // Login
@@ -76,7 +77,7 @@ void Sistema::cadastrarCliente() {
 
         bool loginExistente = false;
 
-        for (const auto& cliente : clientes) {
+        for (const auto& cliente : clientes) {  // Verifica no vetor de clientes se ja existe um cliente com o login informado
             if (cliente.getLogin() == login) {
                 cout << "\nLogin ja existente. Por favor, escolha um login diferente.\n\n";
                 loginExistente = true;
@@ -135,7 +136,7 @@ void Sistema::cadastrarFuncionario() {
 
         bool emailEmUso = false;
 
-        for (const auto& funcionario : funcionarios) {
+        for (const auto& funcionario : funcionarios) {  // Verifica no vetor de funcionarios se ja existe um funcionario com este Email registrado
             if (funcionario.getEmail() == email) {
                 cout << "\nEmail ja registrado! Por favor, escolha um email diferente.\n\n";
                 emailEmUso = true;
@@ -161,7 +162,7 @@ void Sistema::cadastrarFuncionario() {
         else {
             bool cpfExistente = false;
 
-            for (const auto& funcionario : funcionarios) {
+            for (const auto& funcionario : funcionarios) { // Verifica no vetor de funcionarios se ja existe um funcionario com este CPF cadastrado
                 if (funcionario.getCpf() == cpf) {
                     cout << "\nCPF ja registrado! Por favor, digite um CPF nao cadastrado.\n\n";
                     cpfExistente = true;
@@ -173,6 +174,7 @@ void Sistema::cadastrarFuncionario() {
                 break;
             }
         }
+
     } while (true);
 
     // Login
@@ -203,8 +205,19 @@ void Sistema::cadastrarFuncionario() {
 
     // ID
 
-    cout << "ID: ";
-    cin >> id_funcionario;
+    do {
+        cout << "ID: ";
+        cin >> id_funcionario;
+
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignora os caracteres invalidos para nao haver conflito na proxima leitura
+            cout << "ID invalido. Por favor, insira um numero inteiro.\n";
+        }  else {
+            break;
+        }
+    } while (true);
+
 
     Funcionario funcionario(nome, email, cpf, login, senha, id_funcionario); // Cria um objeto e passa os parâmetros para ele.
     funcionarios.push_back(funcionario);                                     // Adiciona o objeto criado no final do vetor de funcionarios.

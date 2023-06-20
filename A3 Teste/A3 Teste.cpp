@@ -50,7 +50,7 @@ int main() {
 			cout << "Digite sua senha: ";
 			cin >> senha;
 
-			if (sistema.autenticarCliente(login, senha)) {
+			if (sistema.autenticarCliente(login, senha)) { // Confere se o login e senha de cliente estão registrados no sistema.
 				cout << "\nLogin realizado com sucesso!\n";
 				cout << "\n=-=-= MENU USUARIO =-=-=" << endl;
 				cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
@@ -77,7 +77,7 @@ int main() {
 						case 1:
 
 							cout << "\n=-=-= Produtos da Categoria selecionada =-=-=\n";
-							for (const auto& produto : estoque.getProdutos()) {
+							for (const auto& produto : estoque.getProdutos()) {                // Exibe os produtos da categoria selecionada.
 								if (categoria == 1 && produto.getCategoria() == "Camiseta") {
 									produto.exibirInfo();
 								}
@@ -88,7 +88,7 @@ int main() {
 
 							cout << "\nDigite o ID do produto a ser adicionado ao carrinho: ";
 							cin >> id;
-							carrinho.addProduto(estoque.getProdutos(), id);
+							carrinho.addProduto(estoque.getProdutos(), id);  // Adiciona o produto que possui o ID selecionado ao carrinho.
 							break;
 
 						case 2:
@@ -145,22 +145,24 @@ int main() {
 
 						int id;
 
-						carrinho.exibeCarrinho();
+						carrinho.exibeCarrinho(); // Exibe o carrinho com os produtos que ja foram adicionados.
+
 						cout << "\nDigite o ID do produto a ser removido do carrinho: ";
 						cin >> id;
-						carrinho.removeProduto(estoque.getProdutos(), id);
+						carrinho.removeProduto(estoque.getProdutos(), id); // Remove do carrinho o produto de acordo com o ID selecionado.
 
 						break;
 
 					case 3:
 
-						carrinho.exibeCarrinho();
+						carrinho.exibeCarrinho();  // Exibe o carrinho com os produtos que ja foram adicionados.
 
 						break;
 
 					case 4:
 
 						cout << "\nA opcao pagamento ainda nao foi implementada.";
+						break;
 
 					default:
 						cout << "Opçao Invalida. Escolha uma opcao valida.\n";
@@ -171,6 +173,7 @@ int main() {
 					cout << "\n(1) ADICIONAR PRODUTO NO CARRINHO" << endl;
 					cout << "\n(2) REMOVER PRODUTO DO CARRINHO" << endl;
 					cout << "\n(3) EXIBIR CARRINHO" << endl;
+					cout << "\n(4) PAGAMENTO (NAO IMPLEMENTADO)" << endl;
 					cout << "\n(0) SAIR" << endl;
 					cin >> opcarrinho;
 
@@ -197,13 +200,13 @@ int main() {
 
 			case 1:
 
-				sistema.cadastrarCliente();
+				sistema.cadastrarCliente(); // Realiza o cadastro do cliente.
 
 				break;
 
 			case 2:
 
-				sistema.cadastrarFuncionario();
+				sistema.cadastrarFuncionario(); // Realiza o cadastro do funcionario.
 
 				break;
 			}
@@ -218,7 +221,7 @@ int main() {
 			cout << "Digite a senha: ";
 			cin >> senha;
 
-			if (sistema.autenticarFuncionario(login, senha)) {
+			if (sistema.autenticarFuncionario(login, senha)) {  // Verifica se o login e senha de funcionario esta cadastrado no sistema
 				cout << "\nLogin realizado com sucesso!\n";
 
 			do {
@@ -240,7 +243,7 @@ int main() {
 				case 1:
 
 					do {
-						estoque.adicionarProduto();
+						estoque.adicionarProduto(); // Permite que o funcionario adicione um item ao estoque.
 
 						cout << "\nDejesa adicionar outro produto ao estoque? (S/N): ";
 						char resposta;
@@ -260,13 +263,13 @@ int main() {
 					cout << "\nDigite o ID do protudo a ser removido: ";
 					cin >> id;
 
-					estoque.removerProduto(id);
+					estoque.removerProduto(id); // Permite que o funcionario remova um item do estoque.
 
 					break;
 
 				case 3:
 
-					estoque.exibirProdutos();
+					estoque.exibirProdutos(); // Exibe os produtos disponiveis no estoque.
 
 					break;
 
@@ -303,4 +306,6 @@ int main() {
 			break;
 		}
 	} while (!sair);
+
+	return 0;
 }
