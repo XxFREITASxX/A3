@@ -145,7 +145,7 @@ void Estoque::exibirProdutos() const {
 void Estoque::exibirCategoria(const string& categoria) {
 	for (const auto& produto : produtos) {
 		if (produto.getCategoria() == categoria) {
-			produto.exibirInfo();
+			produto.exibirInfo(); // Exibe as informações dos produtos da categoria selecionada
 		}
 	}
 }
